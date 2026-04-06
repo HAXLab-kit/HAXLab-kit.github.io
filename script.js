@@ -9,8 +9,8 @@ const pageSections = document.querySelectorAll('.page-section');
 // Mobile menu toggle
 navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
 
-// Section navigation
-function showSection(id) {
+// Hash-based routing — enables browser back/forward
+function showSection(id, pushState) {
     if (id === 'home') {
         homeParts.forEach(s => s.style.display = '');
         pageSections.forEach(s => s.style.display = 'none');
@@ -22,11 +22,20 @@ function showSection(id) {
     }
 
     document.querySelectorAll('.nav-link').forEach(l => {
-        l.classList.toggle('active', l.dataset.section === id);
+        const sec = l.dataset.section;
+        l.classList.toggle('active', sec === id || (id === 'person-detail' && sec === 'people'));
     });
 
     navMenu.classList.remove('open');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Update URL hash (pushState=false when handling popstate to avoid duplicate entries)
+    if (pushState !== false) {
+        const hash = id === 'home' ? '' : '#' + id;
+        if (window.location.hash !== hash) {
+            history.pushState({ section: id }, '', hash || './');
+        }
+    }
 
     // Re-trigger animations
     setTimeout(() => {
@@ -35,12 +44,45 @@ function showSection(id) {
     }, 100);
 }
 
+// Handle browser back/forward
+window.addEventListener('popstate', (e) => {
+    if (e.state?.person) {
+        showPersonDetail(e.state.person);
+        return;
+    }
+    const hash = window.location.hash.replace('#', '');
+    if (hash.startsWith('person/')) {
+        showPersonDetail(hash.replace('person/', ''));
+        return;
+    }
+    const id = e.state?.section || hash || 'home';
+    showSection(id, false);
+});
+
+// Nav link clicks
 navLinks.forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
         showSection(link.dataset.section);
     });
 });
+
+// Load correct section on page load from URL hash
+function initRoute() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash.startsWith('person/')) {
+        const personId = hash.replace('person/', '');
+        if (personData[personId]) {
+            showPersonDetail(personId);
+            history.replaceState({ section: 'person-detail', person: personId }, '');
+            return;
+        }
+    }
+    if (hash && document.getElementById(hash)) {
+        showSection(hash, false);
+    }
+    history.replaceState({ section: hash || 'home' }, '');
+}
 
 // Navbar scroll
 window.addEventListener('scroll', () => {
@@ -327,12 +369,27 @@ function showPersonDetail(personId) {
     if (p.awards && p.awards.length) html += `<div class="pd-section"><h3><i class="fas fa-trophy"></i> Awards</h3><ul>${p.awards.map(a => `<li>${a}</li>`).join('')}</ul></div>`;
 
     document.getElementById('profileDetail').innerHTML = html;
-    showSection('person-detail');
 
-    // Keep people nav active
+    // Show section without pushing state (we push our own with person id)
+    homeParts.forEach(s => s.style.display = 'none');
+    pageSections.forEach(s => s.style.display = 'none');
+    document.getElementById('person-detail').style.display = '';
     document.querySelectorAll('.nav-link').forEach(l => {
         l.classList.toggle('active', l.dataset.section === 'people');
     });
+    navMenu.classList.remove('open');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Push hash with person ID so back button works
+    const hash = '#person/' + personId;
+    if (window.location.hash !== hash) {
+        history.pushState({ section: 'person-detail', person: personId }, '', hash);
+    }
+
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.remove('visible'));
+        initObserver();
+    }, 100);
 }
 
 function initPersonCards() {
@@ -351,4 +408,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initObserver();
     initLightbox();
     initPersonCards();
+    initRoute();
 });
