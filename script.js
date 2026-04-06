@@ -1,133 +1,76 @@
-// ===== Navigation =====
+// ===== Elements =====
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('[data-section]');
-const sections = document.querySelectorAll('.section');
+const homeParts = document.querySelectorAll('.hero-section, .home-part');
+const pageSections = document.querySelectorAll('.page-section');
 
-// Home consists of hero + highlights + research overview (always visible together)
-const homeSections = [
-    document.querySelector('.hero-section'),
-    document.querySelector('.highlights-section'),
-    document.querySelector('.research-overview-section')
-];
-
-const innerSections = document.querySelectorAll('.section[id]:not(#home)');
-
-// Toggle mobile menu
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-});
+// Mobile menu toggle
+navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
 
 // Section navigation
-function showSection(sectionId) {
-    // Hide all inner sections
-    innerSections.forEach(s => s.style.display = 'none');
-
-    // Handle home vs other sections
-    if (sectionId === 'home') {
-        homeSections.forEach(s => s.style.display = '');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+function showSection(id) {
+    if (id === 'home') {
+        homeParts.forEach(s => s.style.display = '');
+        pageSections.forEach(s => s.style.display = 'none');
     } else {
-        homeSections.forEach(s => s.style.display = 'none');
-        const target = document.getElementById(sectionId);
-        if (target) {
-            target.style.display = '';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        homeParts.forEach(s => s.style.display = 'none');
+        pageSections.forEach(s => s.style.display = 'none');
+        const target = document.getElementById(id);
+        if (target) target.style.display = '';
     }
 
-    // Update active nav link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.section === sectionId) {
-            link.classList.add('active');
-        }
+    document.querySelectorAll('.nav-link').forEach(l => {
+        l.classList.toggle('active', l.dataset.section === id);
     });
 
-    // Close mobile menu
     navMenu.classList.remove('open');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Trigger animations
-    requestAnimationFrame(() => {
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.classList.remove('visible');
-        });
-        setTimeout(initAnimations, 100);
-    });
+    // Re-trigger animations
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.remove('visible'));
+        initObserver();
+    }, 100);
 }
 
-// Click handlers for all navigation elements
 navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', e => {
         e.preventDefault();
         showSection(link.dataset.section);
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 30);
 });
 
-// ===== Publication Tabs =====
+// Publication tabs
 document.querySelectorAll('.pub-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-        // Deactivate all tabs
         document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.pub-content').forEach(c => c.classList.remove('active'));
-
-        // Activate clicked tab
         tab.classList.add('active');
-        const target = document.getElementById(tab.dataset.tab);
-        if (target) target.classList.add('active');
+        const t = document.getElementById(tab.dataset.tab);
+        if (t) t.classList.add('active');
     });
 });
 
-// ===== Scroll Animations =====
-function initAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
+// Scroll animations
+function initObserver() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 }
 
-// Add fade-in class to cards
-function addFadeInClasses() {
-    const selectors = [
-        '.highlight-card',
-        '.research-overview-card',
-        '.timeline-item',
-        '.person-card',
-        '.director-card',
-        '.research-card',
-        '.project-card',
-        '.pub-item',
-        '.award-card',
-        '.contact-card'
-    ];
-
-    selectors.forEach(selector => {
-        document.querySelectorAll(selector).forEach((el, i) => {
-            el.classList.add('fade-in');
-            el.style.transitionDelay = `${i * 0.05}s`;
-        });
-    });
-}
-
-// ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
-    addFadeInClasses();
-    initAnimations();
+    const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item';
+    document.querySelectorAll(selectors).forEach((el, i) => {
+        el.classList.add('fade-in');
+        el.style.transitionDelay = `${Math.min(i * 0.03, 0.5)}s`;
+    });
+    initObserver();
 });
