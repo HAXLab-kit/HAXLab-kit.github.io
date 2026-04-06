@@ -112,13 +112,36 @@ const personData = {
         bio: 'HAX Lab의 디렉터로서 Extended Reality(XR) 기술과 인간-컴퓨터 상호작용(HCI)을 연구하고 있습니다. VR, AR, MR 환경에서의 직관적인 멀티모달 인터랙션 기법, 협업 시스템, 그리고 메타버스 기술 개발에 집중하고 있습니다.',
         research: ['멀티모달 인터랙션 (시선, 음성, 터치)', '몰입형 VR/AR 인터랙션', '다중 사용자 협업 가상 환경', 'Embodied XR 인터랙션 및 아바타 모션 추정'],
         publications: [
-            {title: '"What Makes Object Referencing Clear?" - XR Collaboration Strategies', venue: 'IEEE ISMAR 2025'},
+            {title: '"Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling"', venue: 'ACM VRST 2025 Demo'},
             {title: '"Trade-offs in Virtual Grasping: Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025'},
+            {title: '"What Makes Object Referencing Clear? Investigating Strategies for XR Collaboration"', venue: 'IEEE ISMAR 2025'},
             {title: '"Head-Driven Algorithm for Estimating Upper and Lower Body Motion in VR"', venue: 'IEEE Access (SCIE), 2025'},
             {title: '"ITap: Index Finger Tap Interaction by Gaze Integration"', venue: 'Sensors (SCIE), 2025'},
-            {title: '"Immersive VR Navigation for Accessibility"', venue: 'Electronics (SCIE), 2025'}
+            {title: '"Immersive Interaction for Inclusive VR Navigation"', venue: 'Electronics (SCIE), 2025'},
+            {title: '"Virtual Object Weight Recognition by Measuring Finger Muscle Activity"', venue: 'Electronics (SCIE), 2022'},
+            {title: '"Contactless Bio-Signal Measurement System using RGB Camera"', venue: 'Applied Sciences (SCIE), 2021'},
+            {title: '"Blurry Touch Finger Interaction Technique"', venue: 'Applied Sciences (SCIE), 2020'},
+            {title: '"Applying Touchscreen Based Navigation to VR Environment"', venue: 'Electronics (SCIE), 2020'},
+            {title: '"A Comparative Analysis on the Impact of Face Tracker on User Experience in VR"', venue: 'IHCI 2020'},
+            {title: '"EasyMR: Presence and Immersion in Easy Mixed Reality"', venue: 'HCI International 2019'},
+            {title: '"A Perceptual Evaluation of GAN-based Face Aging Effects"', venue: 'IEEE AIVR 2018'},
+            {title: '"EasyMR: Easy Mixed Reality System"', venue: 'APMAR 2018'},
+            {title: '"Hand-Foot Coordinated Quadruped Interaction Technique"', venue: 'JMUI (SCIE), 2017'},
+            {title: '"Presence and Immersion of Easy Mobile VR using Smartphone"', venue: 'ACM VRST 2017'},
+            {title: '"HoVR-type: Smartphone as Typing Interface in VR using Hovering"', venue: 'ACM VRST 2016'},
+            {title: '"Virtual Reality based Collaborative Crime Scene Reconstruction"', venue: 'WFF 2014'},
+            {title: '"Standardization for Mixed and Augmented Reality"', venue: 'VRCAI 2013'}
         ],
-        projects: ['NRF 신진연구자지원사업 - XR-Physical AI 기반 Human-Digital Twin 인터랙션 (2026-2029)', '국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)', '화재현장 자동 복원 및 VR 기반 몰입형 수사 기술 (2025-2027)']
+        projects: [
+            'NRF 신진연구자지원사업 - XR-Physical AI 기반 Human-Digital Twin 인터랙션 (2026-2029)',
+            '대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)',
+            '화재현장 자동 복원 및 VR 기반 몰입형 수사 기술 (2025-2027)',
+            'AI 기반 시설 이상탐지 및 예지보전 솔루션 (2025-2026)',
+            '디지털트윈 연계 ICT 기술 발굴 연구 (2025)',
+            '교통사고 영상 분석 시스템 개발 (2025)',
+            'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)',
+            '가상현실 기반 범죄현장 복원 (2014)'
+        ]
     },
     lee_jemin: {
         name: 'Jemin Lee', nameKr: '이제민',
@@ -131,8 +154,12 @@ const personData = {
         bio: '2025년 2학기부터 석사과정을 시작했으며, VR 환경에서의 게임 및 융합 콘텐츠 연구에 관심을 가지고 있습니다.',
         research: ['VR 기반 게임 인터랙션', '가상 환경에서의 물체 파지(Grasping) 기법', '융합 콘텐츠 개발'],
         publications: [
-            {title: '"Trade-offs in Virtual Grasping: Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025 (Presenter)'}
-        ]
+            {title: '"Trade-offs in Virtual Grasping: Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025 (Presenter)'},
+            {title: '"Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling"', venue: 'ACM VRST 2025 Demo'},
+            {title: '"What Makes Object Referencing Clear? Investigating Strategies for XR Collaboration"', venue: 'IEEE ISMAR 2025'}
+        ],
+        projects: ['대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)', 'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)'],
+        awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)', '한국디지털콘텐츠학회 추계학술대회 동상 (2024.11)']
     },
     kim_jeonghyeon: {
         name: 'Jeonghyeon Kim', nameKr: '김정현',
@@ -146,8 +173,10 @@ const personData = {
         research: ['XR 협업 환경에서의 객체 참조 전략', '멀티모달 인터랙션 기법', '다중 사용자 VR 어셈블리 시뮬레이션'],
         publications: [
             {title: '"What Makes Object Referencing Clear? Investigating Strategies for XR Collaboration"', venue: 'IEEE ISMAR 2025 (Presenter)'},
-            {title: '"Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling"', venue: 'ACM VRST 2025 Demo'}
+            {title: '"Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling"', venue: 'ACM VRST 2025 Demo'},
+            {title: '"Trade-offs in Virtual Grasping: Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025'}
         ],
+        projects: ['대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)', 'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)'],
         awards: ['국회의원 표창 (2025.08)', 'AI 캡스톤디자인 경진대회 장려상 (2024.12)', '한국디지털콘텐츠학회 추계학술대회 동상 (2024.11)']
     },
     kang_hyeongjun: {
@@ -196,6 +225,81 @@ const personData = {
         bio: '2024년 1학기부터 참여했으며, 메타버스 콘텐츠와 XR 게임 개발에 관심을 가지고 있습니다. 현재 휴학 중입니다.',
         research: ['메타버스 콘텐츠 개발', 'XR 게임'],
         awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)']
+    },
+    // Alumni
+    kim_taewan: {
+        name: 'Taewan Kim', nameKr: '김태완',
+        photo: 'https://lh3.googleusercontent.com/sitesv/APaQ0SQSm-wUQ_UxtGsOOO3Jkl8P4bDiD9rFSrWQMq2B-dkLrH-jEfBP7uDkgCprUl7Ale3DGC8d_IsywaXzuIeNCRWAW6KSvHPEmLH7Sp0XR8sv2mvCIyfEvun0r-JhIiefzsdODKMJyegnQ46siyvGQpoLu7uAaUQvec01fKlzi1FrLbn9XE3SIfLIlufGPnJ4OSgdsXuNNXQMk2pHIRH7b691P7NfaV_ByWdm=w400',
+        role: 'Alumni (B.S.)',
+        dept: 'Department of Computer Software Engineering',
+        affil: 'Kumoh National Institute of Technology',
+        email: 'kimtaeyan21@naver.com',
+        tags: ['XR','Digital Twin'],
+        bio: '2025-1부터 2026-1까지 학부 연구생으로 참여했습니다. 현재 KETI에서 근무하고 있습니다.',
+        research: ['디지털트윈 연계 기술', 'XR 콘텐츠 개발'],
+        projects: ['디지털트윈 연계 ICT 기술 발굴 연구 (2025)']
+    },
+    im_junseok: {
+        name: 'Junseok Im', nameKr: '임준석',
+        photo: 'https://lh3.googleusercontent.com/sitesv/APaQ0STQ89sd1fWYGPS512za-c9CouX4bG0NJz1KL2B9UbdBv-aQV6UpJ53qgGNw_Bl-MvtPZd9pQaWveRi-BlfCyE35gX1YD0yDTxxd2uzU-bCBI-Bc43lu5j_5WbewUzPHj61cWmhKAHs4snUHYMLxTvwIs8LfGmO5HGW4KRwIdSaMriMUyblpVtynrQV8kEJ2JMNJiLrgD2dPuTEpkpj_1gWNpGwye1wjQHDo5ss=w400',
+        role: 'Alumni (B.S.)',
+        dept: 'Department of Computer Software Engineering',
+        affil: 'Kumoh National Institute of Technology',
+        email: 'ij8337@naver.com',
+        tags: ['XR','VR'],
+        bio: '2024-2부터 2026-1까지 학부 연구생으로 참여했습니다.',
+        research: ['XR 콘텐츠 개발', 'VR 인터랙션'],
+        projects: ['대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)'],
+        awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)']
+    },
+    kim_gu: {
+        name: 'Gu Kim', nameKr: '김구',
+        photo: 'https://lh3.googleusercontent.com/sitesv/APaQ0SQUbFSV-z0BI_QcDta7jjNod4kRtyqnbyQTxZuk03N2sUND5xga0b3WjXPuN6Bj0bFnx=w400',
+        role: 'Alumni (B.S.)',
+        dept: 'Department of Computer Software Engineering',
+        affil: 'Kumoh National Institute of Technology',
+        email: 'hadove02@naver.com',
+        tags: ['XR','AI'],
+        bio: '2024-2부터 2026-1까지 학부 연구생으로 참여했습니다.',
+        research: ['XR 콘텐츠 개발', 'AI 기반 시스템'],
+        projects: ['대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)'],
+        awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)']
+    },
+    lee_jemin_alumni: {
+        name: 'Jemin Lee', nameKr: '이제민',
+        photo: 'images/people/lee_jemin.jpg',
+        role: 'Alumni (B.S. 2025.08) - Now M.S. Student at KIT',
+        dept: 'Department of Computer Software Engineering',
+        affil: 'Kumoh National Institute of Technology',
+        email: 'char3941@kumoh.ac.kr',
+        tags: ['VR','Games','Convergence Contents'],
+        bio: '2024년 1학기부터 학부 연구생으로 참여했으며, 2025년 8월 학사 졸업 후 금오공과대학교 석사과정에 진학했습니다.',
+        research: ['VR 기반 게임 인터랙션', '가상 환경에서의 물체 파지(Grasping) 기법'],
+        publications: [
+            {title: '"Trade-offs in Virtual Grasping: Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025 (Presenter)'},
+            {title: '"Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling"', venue: 'ACM VRST 2025 Demo'},
+            {title: '"What Makes Object Referencing Clear? Investigating Strategies for XR Collaboration"', venue: 'IEEE ISMAR 2025'}
+        ],
+        projects: ['대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)', 'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)'],
+        awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)', '한국디지털콘텐츠학회 추계학술대회 동상 (2024.11)']
+    },
+    kim_jeonghyeon_alumni: {
+        name: 'Jeonghyeon Kim', nameKr: '김정현',
+        photo: 'images/people/kim_jeonghyeon.jpg',
+        role: 'Alumni (B.S. 2025.08) - Now M.S. Student at KIT',
+        dept: 'Department of Computer Software Engineering',
+        affil: 'Kumoh National Institute of Technology',
+        email: 'dnrgusrla1@kumoh.ac.kr',
+        tags: ['Collaboration','Multimodal Interaction'],
+        bio: '2024년 2학기부터 학부 연구생으로 참여했으며, 2025년 8월 학사 졸업 후 금오공과대학교 석사과정에 진학했습니다.',
+        research: ['XR 협업 환경에서의 객체 참조 전략', '멀티모달 인터랙션 기법'],
+        publications: [
+            {title: '"What Makes Object Referencing Clear? Investigating Strategies for XR Collaboration"', venue: 'IEEE ISMAR 2025 (Presenter)'},
+            {title: '"Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling"', venue: 'ACM VRST 2025 Demo'},
+            {title: '"Trade-offs in Virtual Grasping: Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025'}
+        ],
+        projects: ['대규모 AI 기반 국방 제품 설계 및 유지보수 서비스 실증 (2024-2026)', 'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)'],
+        awards: ['국회의원 표창 (2025.08)', 'AI 캡스톤디자인 경진대회 장려상 (2024.12)', '한국디지털콘텐츠학회 추계학술대회 동상 (2024.11)']
     }
 };
 
@@ -239,7 +343,7 @@ function initPersonCards() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item,.gallery-item';
+    const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item,.gallery-item,.course-card';
     document.querySelectorAll(selectors).forEach((el, i) => {
         el.classList.add('fade-in');
         el.style.transitionDelay = `${Math.min(i * 0.03, 0.5)}s`;

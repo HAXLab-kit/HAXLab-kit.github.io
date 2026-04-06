@@ -158,6 +158,14 @@ img{max-width:100%;display:block}
 .pub-year{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--primary);width:55px}
 .pub-venue{font-size:.8rem;color:var(--text-muted)}
 
+/* ===== Courses ===== */
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:20px}
+.course-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:transform .2s,box-shadow .2s}
+.course-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.course-card i{font-size:2rem;color:var(--primary);margin-bottom:12px}
+.course-card h4{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:4px}
+.course-card p{font-size:.8rem;color:var(--text-muted)}
+
 /* ===== Awards ===== */
 .awards-table{width:100%;max-width:800px;margin:0 auto;border-collapse:collapse}
 .awards-table tr{border-bottom:1px solid var(--border)}
