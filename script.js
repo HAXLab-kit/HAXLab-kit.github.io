@@ -352,12 +352,20 @@ const personData = {
         role: 'Undergraduate Student',
         dept: 'Department of Computer Software Engineering',
         affil: 'Kumoh National Institute of Technology',
-        email: 'TBD',
-        tags: ['TBD'],
-        bio: 'Joined HAX Lab in 2026-1.',
+        email: 'adelinewtro@gmail.com',
+        tags: ['VR','Games'],
+        links: {
+            github: 'https://github.com/IIwnla'
+        },
+        bio: 'I am Juyoung Lee (이주영), a student in the Department of Computer Software Engineering at Kumoh National Institute of Technology. My current research interests are VR and Games, with a focus on VR-based game development.',
         education: [
             'Kumoh National Institute of Technology, Department of Computer Software Engineering'
-        ]
+        ],
+        research: ['VR 기반의 게임 개발', 'VR', 'Games'],
+        skills: {
+            languages: 'Korean (Native), English',
+            programming: 'Java'
+        }
     },
     lee_kikong: {
         name: 'Kikong Lee', nameKr: '이기공',
