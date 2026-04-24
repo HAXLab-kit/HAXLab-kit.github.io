@@ -348,7 +348,7 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
   .hero-meta{flex-direction:column;gap:8px}
   .about-stats{gap:32px;flex-wrap:wrap}
   .director-card{grid-template-columns:1fr;gap:24px}
-  .director-photo{width:100%;max-width:none}
+  .director-photo{width:calc(50% - 12px);max-width:none}
   .people-grid{grid-template-columns:repeat(2,1fr)}
   .news-row{grid-template-columns:auto auto 1fr;grid-template-areas:"date tag tag" "content content content";column-gap:14px;row-gap:8px;padding:18px 0}
   .news-row > .news-date{grid-area:date;font-size:.76rem}
