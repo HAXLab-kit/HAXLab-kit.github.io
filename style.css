@@ -87,6 +87,7 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 .hl-tag.grant{background:#fef3d1;color:#7d5a15}
 .hl-tag.conf{background:#d7e5f5;color:var(--accent-dark)}
 .hl-tag.paper{background:#d9ecd6;color:#2d5724}
+.hl-tag.member{background:#ede4f5;color:#533b7a}
 .hl-date{font-size:.78rem;color:var(--ink-mute);font-weight:500;letter-spacing:.04em;font-family:'Montserrat',sans-serif;text-align:right;white-space:nowrap}
 @media(max-width:640px){
   .highlight-card{grid-template-columns:1fr;gap:8px}
