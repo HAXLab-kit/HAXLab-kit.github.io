@@ -57,7 +57,8 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 .home-eyebrow::before,.home-eyebrow::after{content:'';position:absolute;top:50%;width:24px;height:1px;background:var(--accent);opacity:.5}
 .home-eyebrow::before{left:0}
 .home-eyebrow::after{right:0}
-.home-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.8rem,6vw,4.6rem);font-weight:800;line-height:1.05;letter-spacing:-0.025em;color:var(--ink);margin-bottom:26px}
+.home-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:26px}
+.home-title .title-line{display:inline-block;white-space:nowrap}
 .home-subtitle{font-family:'Montserrat','Noto Sans KR',sans-serif;font-size:1.05rem;font-weight:400;line-height:1.75;color:var(--ink-soft);max-width:720px;margin:0 auto}
 .home-subtitle strong{color:var(--ink);font-weight:600}
 .home-hero .main-figure{max-width:1020px;margin:64px auto 0;text-align:center}
@@ -135,7 +136,8 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 .person-card:hover{box-shadow:0 4px 20px rgba(26,35,50,.05);border-color:var(--accent)}
 .person-card img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;margin:0 0 14px;border-radius:6px}
 .person-card h4{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:400;letter-spacing:-0.01em;line-height:1.2;margin-bottom:4px}
-.person-card h4 .name-kr{font-family:'Noto Sans KR',sans-serif;font-size:.82rem;color:var(--ink-mute);font-weight:400;margin-left:6px}
+.person-card h4{word-break:keep-all;overflow-wrap:break-word}
+.person-card h4 .name-kr{font-family:'Noto Sans KR',sans-serif;font-size:.82rem;color:var(--ink-mute);font-weight:400;margin-left:6px;white-space:nowrap;display:inline-block}
 .since{font-size:.72rem;color:var(--ink-mute);margin:4px 0;letter-spacing:.04em}
 .interest{font-size:.82rem;color:var(--ink-soft);margin-bottom:6px;line-height:1.5}
 .email{font-size:.78rem;color:var(--ink-mute);word-break:break-all}
