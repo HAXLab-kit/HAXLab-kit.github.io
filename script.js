@@ -346,6 +346,19 @@ const personData = {
             others: 'Docker, Linux, MySQL, Proxmox VE'
         }
     },
+    lee_juyoung: {
+        name: 'Juyoung Lee', nameKr: '이주영',
+        photo: 'images/people/lee_juyoung.jpg',
+        role: 'Undergraduate Student',
+        dept: 'Department of Computer Software Engineering',
+        affil: 'Kumoh National Institute of Technology',
+        email: 'TBD',
+        tags: ['TBD'],
+        bio: 'Joined HAX Lab in 2026-1.',
+        education: [
+            'Kumoh National Institute of Technology, Department of Computer Software Engineering'
+        ]
+    },
     lee_kikong: {
         name: 'Kikong Lee', nameKr: '이기공',
         photo: 'images/people/lee_kikong.jpg',
@@ -467,7 +480,33 @@ function initPersonCards() {
     document.getElementById('backToPeople').addEventListener('click', () => showSection('people'));
 }
 
+function populateHighlights(limit = 5) {
+    const grid = document.getElementById('highlightsGrid');
+    if (!grid) return;
+    const rows = document.querySelectorAll('#news .news-row');
+    const tagLabels = { grant: 'Grant', conf: 'Conference', paper: 'Paper', member: 'Member', lab: 'Lab' };
+
+    Array.from(rows).slice(0, limit).forEach(row => {
+        const date = row.querySelector('.news-date')?.textContent.trim() || '';
+        const tagEl = row.querySelector('.news-tag');
+        const tagClass = tagEl ? (Array.from(tagEl.classList).find(c => c !== 'news-tag') || '') : '';
+        const tagLabel = tagLabels[tagClass] || (tagEl?.textContent.trim() || '');
+        const contentEl = row.querySelector('.news-content p') || row.querySelector('.news-content') || row.querySelector('span:last-child');
+        const text = contentEl ? contentEl.textContent.trim().replace(/\s+/g, ' ') : '';
+
+        const card = document.createElement('div');
+        card.className = 'highlight-card';
+        card.innerHTML = `
+            <span class="hl-tag ${tagClass}">${tagLabel}</span>
+            <p>${text}</p>
+            <span class="hl-date">${date}</span>
+        `;
+        grid.appendChild(card);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    populateHighlights(5);
     const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item,.gallery-item,.course-card';
     document.querySelectorAll(selectors).forEach((el, i) => {
         el.classList.add('fade-in');
