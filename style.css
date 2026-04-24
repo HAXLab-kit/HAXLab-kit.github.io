@@ -78,16 +78,20 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 
 /* ===== Highlights (Latest News) ===== */
 .highlights-section{background:var(--paper-alt);padding:90px 0}
-.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.highlight-card{background:#ffffff;border:1px solid var(--line);border-radius:10px;padding:24px;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;gap:10px;height:210px}
-.highlight-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(11,26,43,.06);border-color:var(--accent)}
-.highlight-card p{font-size:.88rem;color:var(--ink);margin:0;line-height:1.55;font-weight:400;flex:1}
+.highlights-grid{display:flex;flex-direction:column;gap:12px;max-width:960px;margin:0 auto}
+.highlight-card{background:#ffffff;border:1px solid var(--line);border-radius:10px;padding:20px 26px;transition:box-shadow .2s,border-color .2s;display:grid;grid-template-columns:110px 1fr 120px;gap:24px;align-items:center}
+.highlight-card:hover{box-shadow:0 4px 20px rgba(26,35,50,.06);border-color:var(--accent)}
+.highlight-card p{font-size:.92rem;color:var(--ink);margin:0;line-height:1.55;font-weight:400}
 .hl-tag{display:inline-block;width:fit-content;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:4px 10px;border-radius:3px;background:var(--accent-soft);color:var(--ink)}
 .hl-tag{background:var(--accent-soft);color:var(--accent-dark)}
 .hl-tag.grant{background:#fef3d1;color:#7d5a15}
 .hl-tag.conf{background:#d7e5f5;color:var(--accent-dark)}
 .hl-tag.paper{background:#d9ecd6;color:#2d5724}
-.hl-date{font-size:.75rem;color:var(--ink-mute);font-weight:500;letter-spacing:.04em;font-family:'Montserrat',sans-serif;margin-top:auto}
+.hl-date{font-size:.78rem;color:var(--ink-mute);font-weight:500;letter-spacing:.04em;font-family:'Montserrat',sans-serif;text-align:right;white-space:nowrap}
+@media(max-width:640px){
+  .highlight-card{grid-template-columns:1fr;gap:8px}
+  .hl-date{text-align:left}
+}
 .section-action{text-align:center;margin-top:36px}
 .btn-more{display:inline-flex;align-items:center;gap:10px;padding:11px 28px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:6px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.03em;transition:all .2s;cursor:pointer}
 .btn-more:hover{background:var(--ink);color:#fff;gap:14px}
