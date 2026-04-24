@@ -346,18 +346,6 @@ const personData = {
             others: 'Docker, Linux, MySQL, Proxmox VE'
         }
     },
-    nam_yoongi: {
-        name: 'Yoongi Nam', nameKr: '남윤기',
-        photo: 'images/people/nam_yoongi.jpg',
-        role: 'Research Intern (Dasso)',
-        dept: '',
-        affil: 'Kumoh National Institute of Technology',
-        email: 'nyk510@kumoh.ac.kr',
-        tags: ['AI','Game Development'],
-        bio: '2025년 2학기부터 연구 인턴으로 참여하고 있으며, Dasso 팀 소속으로 AI 기반 게임 개발을 연구하고 있습니다.',
-        research: ['AI 기반 게임 개발'],
-        awards: ['GameAlfy Contest 한국게임학회장상 (2025.09)']
-    },
     lee_kikong: {
         name: 'Kikong Lee', nameKr: '이기공',
         photo: 'images/people/lee_kikong.jpg',
