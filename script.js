@@ -492,7 +492,7 @@ function populateHighlights(limit = 5) {
     const grid = document.getElementById('highlightsGrid');
     if (!grid) return;
     const rows = document.querySelectorAll('#news .news-row');
-    const tagLabels = { grant: 'Grant', conf: 'Conference', paper: 'Paper', member: 'Member', lab: 'Lab' };
+    const tagLabels = { grant: 'Grant', conf: 'Conference', paper: 'Paper', member: 'Member', award: 'Award', lab: 'Lab' };
 
     Array.from(rows).slice(0, limit).forEach(row => {
         const date = row.querySelector('.news-date')?.textContent.trim() || '';
