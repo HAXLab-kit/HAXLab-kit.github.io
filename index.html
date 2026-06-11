@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,7 +54,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=6" />
   </head>
   <body>
     <!-- Navigation -->
@@ -114,6 +114,33 @@
           </li>
           <li class="nav-item-haxis">
             <a href="#haxis" class="nav-link nav-link-featured" data-section="haxis">HAXIS</a>
+          </li>
+          <li class="nav-lang" aria-label="Language selector">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+            <div class="lang-switch" role="group" aria-label="Language selector">
+              <button
+                type="button"
+                class="lang-btn active"
+                data-lang="en"
+                aria-label="Switch to English"
+              >
+                <span class="lang-code">EN</span>
+                <span class="lang-check" aria-hidden="true"
+                  ><i class="fas fa-check"></i
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="lang-btn"
+                data-lang="ko"
+                aria-label="Switch to Korean"
+              >
+                <span class="lang-code">KO</span>
+                <span class="lang-check" aria-hidden="true"
+                  ><i class="fas fa-check"></i
+                ></span>
+              </button>
+            </div>
           </li>
         </ul>
       </div>
@@ -1032,6 +1059,28 @@
             </div>
           </div>
           <div class="project-card">
+            <div class="proj-logo">
+              <img src="images/projects/nia.svg" alt="NIA" />
+            </div>
+            <div class="proj-body">
+              <span class="proj-badge ongoing">Ongoing</span>
+              <h4>
+                Large-Scale AI-based Industry-Academia-Research Cooperation
+                Ecosystem
+              </h4>
+              <p>
+                Establishes a hyper-scale AI convergence collaboration system
+                with talent development and startup support.
+              </p>
+              <div class="proj-meta">
+                <span
+                  ><i class="fas fa-landmark"></i> Ministry of Science and ICT,
+                  NIA</span
+                ><span><i class="fas fa-calendar"></i> 2024 - 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
             <div class="proj-logo"><img src="images/projects/중소벤처기업부 CI(3).jpg" alt="Ministry of SMEs and Startups" /></div>
             <div class="proj-body">
               <span class="proj-badge ongoing">Ongoing</span>
@@ -1275,28 +1324,6 @@
                   ><i class="fas fa-landmark"></i> Kwangwoon University
                   Industry-Academic Cooperation</span
                 ><span><i class="fas fa-calendar"></i> 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-card completed">
-            <div class="proj-logo">
-              <img src="images/projects/nia.svg" alt="NIA" />
-            </div>
-            <div class="proj-body">
-              <span class="proj-badge done">Completed</span>
-              <h4>
-                Large-Scale AI-based Industry-Academia-Research Cooperation
-                Ecosystem
-              </h4>
-              <p>
-                Establishes a hyper-scale AI convergence collaboration system
-                with talent development and startup support.
-              </p>
-              <div class="proj-meta">
-                <span
-                  ><i class="fas fa-landmark"></i> Ministry of Science and ICT,
-                  NIA</span
-                ><span><i class="fas fa-calendar"></i> 2024 - 2026</span>
               </div>
             </div>
           </div>
@@ -2477,6 +2504,7 @@
         <p>&copy; 2024-2026 Kumoh National Institute of Technology</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
+    <script src="i18n.js?v=4"></script>
   </body>
 </html>

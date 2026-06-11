@@ -458,6 +458,7 @@ function showPersonDetail(personId) {
     }
 
     document.getElementById('profileDetail').innerHTML = html;
+    window.HAX_I18N?.apply();
 
     // Show section without pushing state (we push our own with person id)
     homeParts.forEach(s => s.style.display = 'none');
