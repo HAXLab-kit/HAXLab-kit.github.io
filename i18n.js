@@ -147,7 +147,7 @@
             'Ongoing': '진행 중',
             'Completed': '완료',
             'Securing Highly Precise Digital-Twin Technology to Pave the Way for Dexterous Manipulation of Multi-Agents in Manufacturing Environments': '다개체 제조환경에서의 조작 숙련성 개선을 위한 고정밀 디지털트윈 기술 개발',
-            'Builds a high-precision manufacturing digital twin combining 3DGS-based workspace reconstruction, USD scene graphs, multi-robot physics simulation, and XR-based human-robot interaction for deformable-object manipulation. The project links generative prediction with active morphing tactile skins to improve Sim-to-Real coordination and grasp stability.': '3DGS 기반 작업 공간 재현, USD Scene Graph, 다개체 로봇 물리 시뮬레이션, XR 기반 인간-로봇 상호작용을 결합해 비정형 물체 조작을 지원하는 고정밀 제조 디지털 트윈을 구축합니다. 생성형 예측 제어와 능동 모핑형 복합 촉각 인공외피를 연동해 Sim-to-Real 협업 정합성과 파지 안정성을 검증합니다.',
+            'Builds a high-precision manufacturing digital twin combining 3DGS-based workspace reconstruction, USD scene graphs, multi-robot physics simulation, and XR-based human-robot interaction for deformable-object manipulation.': '3DGS 기반 작업 공간 재현, USD Scene Graph, 다개체 로봇 물리 시뮬레이션, XR 기반 인간-로봇 상호작용을 결합해 비정형 물체 조작을 지원하는 고정밀 제조 디지털 트윈을 구축합니다.',
             'Ministry of Science and ICT, NRF (Basic Research Laboratory)': '과학기술정보통신부, 한국연구재단(기초연구실)',
             'XR-Physical AI-based Human-Digital Twin Interaction for Expanding the Everyday Perception of the Visually Impaired': '시각장애인의 일상 인식 확장을 위한 XR-Physical AI 기반 인간-디지털 트윈 상호작용',
             'Develops technologies to enhance environmental perception and safe mobility for visually impaired individuals, including 3D reconstruction and XR-based training.': '3D 재구성 및 XR 기반 훈련을 포함해 시각장애인의 환경 인식과 안전한 이동을 향상시키는 기술을 개발합니다.',
