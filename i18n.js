@@ -331,7 +331,11 @@
 
     Object.assign(
         dictionaries.ko,
-        Object.fromEntries(koPreservedText.map(text => [text, text]))
+        Object.fromEntries(
+            koPreservedText
+                .filter(text => !Object.prototype.hasOwnProperty.call(dictionaries.ko, text))
+                .map(text => [text, text])
+        )
     );
 
     const textOriginals = new WeakMap();
