@@ -565,6 +565,17 @@ const GRANT_EMPHASIS_PATTERNS = [
     /National\s+Forensic\s+Service/g,
     /Korea\s+Electronics\s+Technology\s+Institute\s+\(KETI\)/g,
     /Korea\s+Insurance\s+Development\s+Institute/g,
+    /한국연구재단/g,
+    /기초연구실지원사업/g,
+    /신진연구\s*A/g,
+    /RISE\s+제조산업\s+AX\s+전환\s+협업\s+프로그램/g,
+    /RISE\s+프로그램/g,
+    /한국전파진흥협회\s*\(RAPA\)/g,
+    /중소벤처기업부/g,
+    /2026\s+창업중심대학\s+지원사업\s*\(대학\s*트랙\)/g,
+    /국립과학수사연구원/g,
+    /한국전자기술연구원\s*\(KETI\)/g,
+    /보험개발원/g,
     /"[^"]+"/g
 ];
 const newsContentOriginals = new WeakMap();
