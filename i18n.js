@@ -414,11 +414,15 @@
     }
 
     function applyLanguage(lang = currentLanguage) {
+        document.dispatchEvent(new CustomEvent('hax:i18n-before-apply'));
         currentLanguage = dictionaries[lang] ? lang : DEFAULT_LANG;
         document.documentElement.lang = currentLanguage === 'ko' ? 'ko' : 'en';
         translateTextNodes(document.body, currentLanguage);
         translateAttributes(document.body, currentLanguage);
         updateButtons(currentLanguage);
+        document.dispatchEvent(new CustomEvent('hax:i18n-applied', {
+            detail: { lang: currentLanguage }
+        }));
     }
 
     function setLanguage(lang) {

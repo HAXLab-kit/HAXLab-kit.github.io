@@ -521,6 +521,147 @@ function markImportantNews() {
     });
 }
 
+const NEWS_EMPHASIS_PATTERNS = [
+    'Youngwon Kim',
+    'Jemin Lee',
+    'Jeonghyeon Kim',
+    'Hyeongjun Kang',
+    'Donghee Lee',
+    'Juyoung Lee',
+    'Kikong Lee',
+    'Taewan Kim',
+    'Gu Kim',
+    'Yoongi Nam',
+    'Junseok Im',
+    '김영원',
+    '이제민',
+    '김정현',
+    '강형준',
+    '이동희',
+    '이주영',
+    '이기공',
+    '김태완',
+    '김구',
+    '남윤기',
+    '임준석',
+    /top-tier\s+BK21\s+conference\s+in\s+Computer\s+Science/g,
+    /BK21\s+컴퓨터과학\s+분야\s+우수\s+국제학술대회/g,
+    /CS\s+우수\s+국제학술대회/g,
+    /IEEE\s+ISMAR\s+2026/g,
+    /IEEE\s+ISMAR\s+2025/g,
+    /ACM\s+VRST\s+2025/g,
+    /ACM\s+Symposium\s+on\s+Virtual\s+Reality\s+Software\s+and\s+Technology\s+\(VRST\)\s+2025/g,
+    /\(?Acceptance\s+Rate:\s*\d+(?:\.\d+)?%\)?/g,
+    /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
+];
+const newsContentOriginals = new WeakMap();
+
+function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getNewsContentElement(row) {
+    return row.querySelector('.news-content p') || row.querySelector('.news-content') || row.querySelector('span:last-child');
+}
+
+function getNewsContentElements() {
+    return Array.from(document.querySelectorAll('#news .news-row'))
+        .map(getNewsContentElement)
+        .filter(Boolean);
+}
+
+function rememberNewsContentOriginal(contentEl) {
+    if (!newsContentOriginals.has(contentEl)) {
+        newsContentOriginals.set(contentEl, contentEl.innerHTML);
+    }
+}
+
+function restoreNewsContentOriginals() {
+    getNewsContentElements().forEach(contentEl => {
+        const original = newsContentOriginals.get(contentEl);
+        if (original !== undefined) contentEl.innerHTML = original;
+    });
+}
+
+function unwrapNewsEmphasis() {
+    document.querySelectorAll('#news .news-emphasis').forEach(el => {
+        const text = document.createTextNode(el.textContent);
+        el.replaceWith(text);
+        text.parentElement?.normalize();
+    });
+}
+
+function getEmphasisMatches(text) {
+    const matches = [];
+
+    NEWS_EMPHASIS_PATTERNS.forEach(pattern => {
+        const regex = pattern instanceof RegExp
+            ? new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`)
+            : new RegExp(escapeRegExp(pattern), 'g');
+
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+            matches.push({
+                start: match.index,
+                end: match.index + match[0].length
+            });
+        }
+    });
+
+    return matches
+        .sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start))
+        .filter((match, index, sorted) => index === 0 || match.start >= sorted[index - 1].end);
+}
+
+function emphasizeTextNode(node) {
+    const text = node.nodeValue;
+    const matches = getEmphasisMatches(text);
+    if (!matches.length) return;
+
+    const fragment = document.createDocumentFragment();
+    let cursor = 0;
+
+    matches.forEach(match => {
+        if (match.start > cursor) {
+            fragment.appendChild(document.createTextNode(text.slice(cursor, match.start)));
+        }
+
+        const strong = document.createElement('strong');
+        strong.className = 'news-emphasis';
+        strong.textContent = text.slice(match.start, match.end);
+        fragment.appendChild(strong);
+        cursor = match.end;
+    });
+
+    if (cursor < text.length) {
+        fragment.appendChild(document.createTextNode(text.slice(cursor)));
+    }
+
+    node.replaceWith(fragment);
+}
+
+function applyNewsEmphasis() {
+    unwrapNewsEmphasis();
+
+    document.querySelectorAll('#news .news-row.is-highlight').forEach(row => {
+        const contentEl = getNewsContentElement(row);
+        if (!contentEl) return;
+        rememberNewsContentOriginal(contentEl);
+
+        const walker = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                if (node.parentElement?.closest('.news-emphasis')) return NodeFilter.FILTER_REJECT;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(emphasizeTextNode);
+    });
+}
+
 function populateHighlights(limit = 5) {
     const grid = document.getElementById('highlightsGrid');
     if (!grid) return;
@@ -533,7 +674,7 @@ function populateHighlights(limit = 5) {
         const tagEl = row.querySelector('.news-tag');
         const tagClass = getNewsTagClass(row);
         const tagLabel = tagLabels[tagClass] || (tagEl?.textContent.trim() || '');
-        const contentEl = row.querySelector('.news-content p') || row.querySelector('.news-content') || row.querySelector('span:last-child');
+        const contentEl = getNewsContentElement(row);
         const text = contentEl ? contentEl.textContent.trim().replace(/\s+/g, ' ') : '';
 
         const card = document.createElement('div');
@@ -550,6 +691,7 @@ function populateHighlights(limit = 5) {
 document.addEventListener('DOMContentLoaded', () => {
     markImportantNews();
     populateHighlights(5);
+    applyNewsEmphasis();
     const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item,.gallery-item,.course-card';
     document.querySelectorAll(selectors).forEach((el, i) => {
         el.classList.add('fade-in');
@@ -560,3 +702,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initPersonCards();
     initRoute();
 });
+
+document.addEventListener('hax:i18n-before-apply', restoreNewsContentOriginals);
+document.addEventListener('hax:i18n-applied', applyNewsEmphasis);
