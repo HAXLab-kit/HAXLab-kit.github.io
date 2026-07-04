@@ -241,6 +241,8 @@
             'Bronze Prize (3rd) - 2024 Fall Korea Digital Contents Society Conference': '동상(3등) - 2024 한국디지털콘텐츠학회 추계학술대회',
             'Jeonghyeon Kim, Jemin Lee, Youngwon Kim · Kumoh National Institute of Technology': '김정현, 이제민, 김영원 · 국립금오공과대학교',
 
+            '26.07. Academic Paper Competition of the Digital Contents Society': '26.07 한국디지털콘텐츠학회 논문 경진대회',
+            '26.07. Jeju MT': '26.07 제주 MT',
             '26.04. Lunch': '26.04. 점심 식사',
             '26.03. Building Computers': '26.03. 컴퓨터 조립',
             '25.11. Demo Session at VRST 2025': '25.11. VRST 2025 데모 세션',
