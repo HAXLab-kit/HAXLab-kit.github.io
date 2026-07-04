@@ -530,7 +530,6 @@ const LAB_AUTHOR_EMPHASIS_PATTERNS = [
     'Juyoung Lee',
     'Kikong Lee',
     'Taewan Kim',
-    'Seungwoo Woo',
     'Gu Kim',
     'Yoongi Nam',
     'Junseok Im',
@@ -542,7 +541,6 @@ const LAB_AUTHOR_EMPHASIS_PATTERNS = [
     '이주영',
     '이기공',
     '김태완',
-    '우승우',
     '김구',
     '남윤기',
     '임준석'
@@ -596,6 +594,10 @@ const awardContentOriginals = new WeakMap();
 
 function escapeRegExp(value) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function flexibleTextRegExp(value) {
+    return new RegExp(value.trim().split(/\s+/).map(escapeRegExp).join('\\s+'), 'g');
 }
 
 function getNewsContentElement(row) {
@@ -693,7 +695,7 @@ function getEmphasisMatches(text, extraPatterns = [], basePatterns = NEWS_EMPHAS
     [...basePatterns, ...extraPatterns].forEach(pattern => {
         const regex = pattern instanceof RegExp
             ? new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`)
-            : new RegExp(escapeRegExp(pattern), 'g');
+            : flexibleTextRegExp(pattern);
 
         let match;
         while ((match = regex.exec(text)) !== null) {
