@@ -153,9 +153,9 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 .news-press-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
 
 /* ===== Director Card ===== */
-.director-card{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;padding:40px 0;margin-bottom:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s}
-.director-card.clickable{cursor:pointer}
-.director-card.clickable:hover{background:var(--paper-alt)}
+.director-card{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;padding:40px 0;margin-bottom:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s,box-shadow .2s,border-color .2s}
+.director-card.clickable{cursor:pointer;position:relative;overflow:hidden;transform-origin:center;will-change:transform;transition-delay:0s!important}
+.director-card.clickable:hover,.director-card.clickable.is-profile-hovered{background:var(--paper-alt);box-shadow:0 18px 42px rgba(11,26,43,.08);transform:scale(1.015)}
 .director-photo{width:220px;max-width:100%}
 .director-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
 .director-info h3{font-family:'Montserrat',sans-serif;font-size:2.4rem;font-weight:400;margin-bottom:6px;letter-spacing:-0.02em;line-height:1.1}
@@ -170,8 +170,10 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 /* ===== People Groups ===== */
 .group-title{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:60px 0 24px;padding:0;border:none}
 .people-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:20px}
-.person-card{background:#ffffff;padding:14px;text-align:left;transition:box-shadow .2s,border-color .2s;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column}
+.person-card{background:#ffffff;padding:14px;text-align:left;transition:box-shadow .2s,border-color .2s;background-color .2s;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column}
+.person-card.clickable{position:relative;overflow:hidden;transform-origin:center;will-change:transform;transition:transform .08s ease-out,box-shadow .08s,border-color .08s,background-color .08s;transition-delay:0s!important}
 .person-card:hover{box-shadow:0 4px 20px rgba(26,35,50,.05);border-color:var(--accent)}
+.person-card.clickable:hover,.person-card.clickable.is-profile-hovered{background:#fff;box-shadow:0 18px 42px rgba(11,26,43,.12);border-color:var(--accent);transform:scale(1.045)}
 .person-card img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;margin:0 0 14px;border-radius:6px}
 .person-card h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:500;letter-spacing:-0.01em;line-height:1.25;margin-bottom:4px;overflow-wrap:anywhere}
 .person-card h4 .name-kr{font-family:'Noto Sans KR',sans-serif;font-size:.8rem;color:var(--ink-mute);font-weight:400;margin-left:5px}

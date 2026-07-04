@@ -469,6 +469,7 @@ function showPersonDetail(personId) {
     });
     navMenu.classList.remove('open');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    animateProfileDetailIn();
 
     // Push hash with person ID so back button works
     const hash = '#person/' + personId;
@@ -482,9 +483,97 @@ function showPersonDetail(personId) {
     }, 100);
 }
 
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function getAnime() {
+    return prefersReducedMotion() ? null : window.anime;
+}
+
+function setProfileCardHover(card, active) {
+    const anime = getAnime();
+    const isDirector = card.classList.contains('director-card');
+    card.classList.toggle('is-profile-hovered', active);
+
+    if (!anime) return;
+
+    anime.remove(card);
+    anime({
+        targets: card,
+        scale: active ? (isDirector ? 1.015 : 1.045) : 1,
+        duration: active ? 80 : 70,
+        easing: active ? 'easeOutCubic' : 'easeOutQuad'
+    });
+}
+
+function openPersonDetailFromCard(card) {
+    const personId = card.dataset.person;
+    if (!personId || card.dataset.opening === 'true') return;
+
+    const anime = getAnime();
+    if (!anime) {
+        showPersonDetail(personId);
+        return;
+    }
+
+    card.dataset.opening = 'true';
+    anime.remove(card);
+    anime.timeline({
+        complete() {
+            delete card.dataset.opening;
+            card.style.transform = '';
+            showPersonDetail(personId);
+        }
+    })
+        .add({
+            targets: card,
+            scale: 0.985,
+            duration: 45,
+            easing: 'easeOutQuad'
+        })
+        .add({
+            targets: card,
+            scale: card.classList.contains('director-card') ? 1.015 : 1.04,
+            duration: 65,
+            easing: 'easeOutCubic'
+        });
+}
+
+function animateProfileDetailIn() {
+    const anime = getAnime();
+    if (!anime) return;
+
+    const items = document.querySelectorAll('#profileDetail .pd-header, #profileDetail .pd-section');
+    anime.remove(items);
+    anime.set(items, { opacity: 0, translateY: 16 });
+    anime({
+        targets: items,
+        opacity: 1,
+        translateY: 0,
+        delay: anime.stagger(55),
+        duration: 520,
+        easing: 'easeOutCubic'
+    });
+}
+
 function initPersonCards() {
     document.querySelectorAll('[data-person]').forEach(card => {
-        card.addEventListener('click', () => showPersonDetail(card.dataset.person));
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        const label = card.querySelector('h3,h4')?.textContent.trim().replace(/\s+/g, ' ');
+        if (label) card.setAttribute('aria-label', `${label} profile`);
+
+        card.addEventListener('mouseenter', () => setProfileCardHover(card, true));
+        card.addEventListener('mouseleave', () => setProfileCardHover(card, false));
+        card.addEventListener('focus', () => setProfileCardHover(card, true));
+        card.addEventListener('blur', () => setProfileCardHover(card, false));
+        card.addEventListener('click', () => openPersonDetailFromCard(card));
+        card.addEventListener('keydown', e => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            e.preventDefault();
+            openPersonDetailFromCard(card);
+        });
     });
     document.getElementById('backToPeople').addEventListener('click', () => showSection('people'));
 }
@@ -886,7 +975,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item,.gallery-item,.course-card';
     document.querySelectorAll(selectors).forEach((el, i) => {
         el.classList.add('fade-in');
-        el.style.transitionDelay = `${Math.min(i * 0.03, 0.5)}s`;
+        const isProfileCard = el.matches('.director-card.clickable,.person-card.clickable');
+        el.style.transitionDelay = isProfileCard ? '0s' : `${Math.min(i * 0.03, 0.5)}s`;
     });
     initObserver();
     initLightbox();
