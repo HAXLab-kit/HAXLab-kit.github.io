@@ -250,6 +250,7 @@
             '26.07. Jeju MT': '26.07 제주 MT',
             '26.04. Lunch': '26.04. 점심 식사',
             '26.03. Building Computers': '26.03. 컴퓨터 조립',
+            '25.12. Lab dinner': '25.12. 연구실 회식',
             '25.11. Demo Session at VRST 2025': '25.11. VRST 2025 데모 세션',
             '25.11. Paper Presentation at VRST 2025': '25.11. VRST 2025 논문 발표',
             '25.10. Paper Presentation at ISMAR 2025': '25.10. ISMAR 2025 논문 발표',
