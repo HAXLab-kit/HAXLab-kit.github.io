@@ -554,6 +554,19 @@ const NEWS_EMPHASIS_PATTERNS = [
     /\(?Acceptance\s+Rate:\s*\d+(?:\.\d+)?%\)?/g,
     /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
 ];
+const GRANT_EMPHASIS_PATTERNS = [
+    /NRF\s+Basic\s+Research\s+Laboratory\s+Support\s+Program/g,
+    /NRF\s+Young\s+Investigator\s+Research\s+Program/g,
+    /RISE\s+Manufacturing\s+Industry\s+AX\s+Transformation\s+Partnership\s+Program/g,
+    /Regional\s+Innovation\s+System\s*&\s*Education\s+\(RISE\)\s+Program/g,
+    /Korea\s+Radio\s+Promotion\s+Association\s+\(RAPA\)/g,
+    /Ministry\s+of\s+SMEs\s+and\s+Startups'?/g,
+    /2026\s+Startup-Leading\s+University\s+Support\s+Program\s+\(University\s+Track\)/g,
+    /National\s+Forensic\s+Service/g,
+    /Korea\s+Electronics\s+Technology\s+Institute\s+\(KETI\)/g,
+    /Korea\s+Insurance\s+Development\s+Institute/g,
+    /"[^"]+"/g
+];
 const newsContentOriginals = new WeakMap();
 const highlightContentOriginals = new WeakMap();
 
@@ -614,10 +627,10 @@ function unwrapNewsEmphasis() {
     });
 }
 
-function getEmphasisMatches(text) {
+function getEmphasisMatches(text, extraPatterns = []) {
     const matches = [];
 
-    NEWS_EMPHASIS_PATTERNS.forEach(pattern => {
+    [...NEWS_EMPHASIS_PATTERNS, ...extraPatterns].forEach(pattern => {
         const regex = pattern instanceof RegExp
             ? new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`)
             : new RegExp(escapeRegExp(pattern), 'g');
@@ -636,9 +649,9 @@ function getEmphasisMatches(text) {
         .filter((match, index, sorted) => index === 0 || match.start >= sorted[index - 1].end);
 }
 
-function emphasizeTextNode(node) {
+function emphasizeTextNode(node, extraPatterns = []) {
     const text = node.nodeValue;
-    const matches = getEmphasisMatches(text);
+    const matches = getEmphasisMatches(text, extraPatterns);
     if (!matches.length) return;
 
     const fragment = document.createDocumentFragment();
@@ -663,7 +676,7 @@ function emphasizeTextNode(node) {
     node.replaceWith(fragment);
 }
 
-function emphasizeContentElement(contentEl, rememberOriginal) {
+function emphasizeContentElement(contentEl, rememberOriginal, extraPatterns = []) {
     rememberOriginal(contentEl);
 
     const walker = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT, {
@@ -676,20 +689,23 @@ function emphasizeContentElement(contentEl, rememberOriginal) {
 
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(emphasizeTextNode);
+    nodes.forEach(node => emphasizeTextNode(node, extraPatterns));
 }
 
 function applyNewsEmphasis() {
     document.querySelectorAll('#news .news-row.is-highlight').forEach(row => {
         const contentEl = getNewsContentElement(row);
         if (!contentEl) return;
-        emphasizeContentElement(contentEl, rememberNewsContentOriginal);
+        const extraPatterns = getNewsTagClass(row) === 'grant' ? GRANT_EMPHASIS_PATTERNS : [];
+        emphasizeContentElement(contentEl, rememberNewsContentOriginal, extraPatterns);
     });
 }
 
 function applyHighlightEmphasis() {
     getHighlightContentElements().forEach(contentEl => {
-        emphasizeContentElement(contentEl, rememberHighlightContentOriginal);
+        const card = contentEl.closest('.highlight-card');
+        const extraPatterns = card?.dataset.tag === 'grant' ? GRANT_EMPHASIS_PATTERNS : [];
+        emphasizeContentElement(contentEl, rememberHighlightContentOriginal, extraPatterns);
     });
 }
 
@@ -716,6 +732,7 @@ function populateHighlights(limit = 5) {
 
         const card = document.createElement('div');
         card.className = 'highlight-card';
+        card.dataset.tag = tagClass;
 
         const tag = document.createElement('span');
         tag.className = `hl-tag ${tagClass}`;
