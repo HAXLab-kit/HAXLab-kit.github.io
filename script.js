@@ -556,6 +556,11 @@ const NEWS_EMPHASIS_PATTERNS = [
     /\(?Acceptance\s+Rate:\s*\d+(?:\.\d+)?%\)?/g,
     /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
 ];
+const PUBLICATION_EMPHASIS_PATTERNS = [
+    /CS(?:\s*분야)?\s+우수\s+국제\s*학술대회/g,
+    /\(?Acceptance\s+Rate:\s*\d+(?:\.\d+)?%\)?/g,
+    /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
+];
 const GRANT_EMPHASIS_PATTERNS = [
     /NRF\s+Basic\s+Research\s+Laboratory\s+Support\s+Program/g,
     /NRF\s+Young\s+Investigator\s+Research\s+Program/g,
@@ -659,10 +664,10 @@ function unwrapNewsEmphasis() {
     });
 }
 
-function getEmphasisMatches(text, extraPatterns = []) {
+function getEmphasisMatches(text, extraPatterns = [], basePatterns = NEWS_EMPHASIS_PATTERNS) {
     const matches = [];
 
-    [...NEWS_EMPHASIS_PATTERNS, ...extraPatterns].forEach(pattern => {
+    [...basePatterns, ...extraPatterns].forEach(pattern => {
         const regex = pattern instanceof RegExp
             ? new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`)
             : new RegExp(escapeRegExp(pattern), 'g');
@@ -681,9 +686,9 @@ function getEmphasisMatches(text, extraPatterns = []) {
         .filter((match, index, sorted) => index === 0 || match.start >= sorted[index - 1].end);
 }
 
-function emphasizeTextNode(node, extraPatterns = []) {
+function emphasizeTextNode(node, extraPatterns = [], basePatterns = NEWS_EMPHASIS_PATTERNS) {
     const text = node.nodeValue;
-    const matches = getEmphasisMatches(text, extraPatterns);
+    const matches = getEmphasisMatches(text, extraPatterns, basePatterns);
     if (!matches.length) return;
 
     const fragment = document.createDocumentFragment();
@@ -708,7 +713,13 @@ function emphasizeTextNode(node, extraPatterns = []) {
     node.replaceWith(fragment);
 }
 
-function emphasizeContentElement(contentEl, rememberOriginal, extraPatterns = [], skipSelector = '') {
+function emphasizeContentElement(
+    contentEl,
+    rememberOriginal,
+    extraPatterns = [],
+    skipSelector = '',
+    basePatterns = NEWS_EMPHASIS_PATTERNS
+) {
     rememberOriginal(contentEl);
 
     const walker = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT, {
@@ -722,7 +733,7 @@ function emphasizeContentElement(contentEl, rememberOriginal, extraPatterns = []
 
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(node => emphasizeTextNode(node, extraPatterns));
+    nodes.forEach(node => emphasizeTextNode(node, extraPatterns, basePatterns));
 }
 
 function applyNewsEmphasis() {
@@ -748,7 +759,8 @@ function applyPublicationEmphasis() {
             contentEl,
             rememberPublicationContentOriginal,
             [],
-            'strong:not(.news-emphasis)'
+            'strong:not(.news-emphasis)',
+            PUBLICATION_EMPHASIS_PATTERNS
         );
     });
 }
