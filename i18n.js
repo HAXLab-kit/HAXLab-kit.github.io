@@ -248,6 +248,7 @@
 
             '26.07. Academic Paper Competition of the Digital Contents Society': '26.07 한국디지털콘텐츠학회 논문 경진대회',
             '26.07. Jeju MT': '26.07 제주 MT',
+            '26.06. Gyeongbuk Teacher Training': '26.06. 경북 교사 연수',
             '26.04. Lunch': '26.04. 점심 식사',
             '26.03. Building Computers': '26.03. 컴퓨터 조립',
             '25.12. Lab dinner': '25.12. 연구실 회식',
