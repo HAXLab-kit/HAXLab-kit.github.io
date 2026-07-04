@@ -489,16 +489,47 @@ function initPersonCards() {
     document.getElementById('backToPeople').addEventListener('click', () => showSection('people'));
 }
 
+function getNewsTagClass(row) {
+    const tagEl = row.querySelector('.news-tag');
+    return tagEl ? (Array.from(tagEl.classList).find(c => c !== 'news-tag') || '') : '';
+}
+
+function isImportantNews(row) {
+    if (row.dataset.highlight === 'true') return true;
+    if (row.dataset.highlight === 'false') return false;
+
+    const tagClass = getNewsTagClass(row);
+    const text = row.textContent.trim().replace(/\s+/g, ' ');
+    const importantKeywords = [
+        'top-tier BK21 conference in Computer Science',
+        'IEEE ISMAR',
+        'ACM VRST',
+        'ACM Symposium on Virtual Reality Software and Technology',
+        'published in IEEE Access',
+        'published in Sensors',
+        'published in Electronics'
+    ];
+
+    return tagClass === 'grant' || importantKeywords.some(keyword => text.includes(keyword));
+}
+
+function markImportantNews() {
+    document.querySelectorAll('#news .news-row').forEach(row => {
+        row.classList.toggle('is-highlight', isImportantNews(row));
+    });
+}
+
 function populateHighlights(limit = 5) {
     const grid = document.getElementById('highlightsGrid');
     if (!grid) return;
-    const rows = document.querySelectorAll('#news .news-row');
+    grid.textContent = '';
+    const rows = document.querySelectorAll('#news .news-row.is-highlight');
     const tagLabels = { grant: 'Grant', conf: 'Conference', paper: 'Paper', member: 'Member', award: 'Award', lab: 'Lab' };
 
     Array.from(rows).slice(0, limit).forEach(row => {
         const date = row.querySelector('.news-date')?.textContent.trim() || '';
         const tagEl = row.querySelector('.news-tag');
-        const tagClass = tagEl ? (Array.from(tagEl.classList).find(c => c !== 'news-tag') || '') : '';
+        const tagClass = getNewsTagClass(row);
         const tagLabel = tagLabels[tagClass] || (tagEl?.textContent.trim() || '');
         const contentEl = row.querySelector('.news-content p') || row.querySelector('.news-content') || row.querySelector('span:last-child');
         const text = contentEl ? contentEl.textContent.trim().replace(/\s+/g, ' ') : '';
@@ -515,6 +546,7 @@ function populateHighlights(limit = 5) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    markImportantNews();
     populateHighlights(5);
     const selectors = '.highlight-card,.rp-card,.news-row,.person-card,.director-card,.research-block,.project-card,.pub-table tr,.awards-table tr,.contact-item,.gallery-item,.course-card';
     document.querySelectorAll(selectors).forEach((el, i) => {
