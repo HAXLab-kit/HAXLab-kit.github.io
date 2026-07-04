@@ -501,7 +501,7 @@ function setProfileCardHover(card, active) {
     anime.remove(card);
     anime({
         targets: card,
-        scale: active ? (isDirector ? 1.015 : 1.045) : 1,
+        scale: active ? (isDirector ? 1.035 : 1.045) : 1,
         duration: active ? 80 : 70,
         easing: active ? 'easeOutCubic' : 'easeOutQuad'
     });
@@ -534,7 +534,7 @@ function openPersonDetailFromCard(card) {
         })
         .add({
             targets: card,
-            scale: card.classList.contains('director-card') ? 1.015 : 1.04,
+            scale: card.classList.contains('director-card') ? 1.035 : 1.04,
             duration: 65,
             easing: 'easeOutCubic'
         });
