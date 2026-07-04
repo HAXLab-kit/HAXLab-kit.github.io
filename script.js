@@ -592,6 +592,7 @@ const GRANT_EMPHASIS_PATTERNS = [
 const newsContentOriginals = new WeakMap();
 const highlightContentOriginals = new WeakMap();
 const publicationContentOriginals = new WeakMap();
+const awardContentOriginals = new WeakMap();
 
 function escapeRegExp(value) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -615,6 +616,10 @@ function getPublicationContentElements() {
     return Array.from(document.querySelectorAll('#publications .pub-table td:nth-child(2)'));
 }
 
+function getAwardContentElements() {
+    return Array.from(document.querySelectorAll('#awards .award-info p'));
+}
+
 function rememberNewsContentOriginal(contentEl) {
     if (!newsContentOriginals.has(contentEl)) {
         newsContentOriginals.set(contentEl, contentEl.innerHTML);
@@ -630,6 +635,12 @@ function rememberHighlightContentOriginal(contentEl) {
 function rememberPublicationContentOriginal(contentEl) {
     if (!publicationContentOriginals.has(contentEl)) {
         publicationContentOriginals.set(contentEl, contentEl.innerHTML);
+    }
+}
+
+function rememberAwardContentOriginal(contentEl) {
+    if (!awardContentOriginals.has(contentEl)) {
+        awardContentOriginals.set(contentEl, contentEl.innerHTML);
     }
 }
 
@@ -654,10 +665,18 @@ function restorePublicationContentOriginals() {
     });
 }
 
+function restoreAwardContentOriginals() {
+    getAwardContentElements().forEach(contentEl => {
+        const original = awardContentOriginals.get(contentEl);
+        if (original !== undefined) contentEl.innerHTML = original;
+    });
+}
+
 function restoreEmphasisOriginals() {
     restoreNewsContentOriginals();
     restoreHighlightContentOriginals();
     restorePublicationContentOriginals();
+    restoreAwardContentOriginals();
 }
 
 function unwrapNewsEmphasis() {
@@ -769,11 +788,24 @@ function applyPublicationEmphasis() {
     });
 }
 
+function applyAwardEmphasis() {
+    getAwardContentElements().forEach(contentEl => {
+        emphasizeContentElement(
+            contentEl,
+            rememberAwardContentOriginal,
+            [],
+            '',
+            LAB_AUTHOR_EMPHASIS_PATTERNS
+        );
+    });
+}
+
 function applyImportantNewsEmphasis() {
     unwrapNewsEmphasis();
     applyNewsEmphasis();
     applyHighlightEmphasis();
     applyPublicationEmphasis();
+    applyAwardEmphasis();
 }
 
 function populateHighlights(limit = 5) {
