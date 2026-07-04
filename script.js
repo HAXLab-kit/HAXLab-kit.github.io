@@ -545,8 +545,7 @@ const LAB_AUTHOR_EMPHASIS_PATTERNS = [
     '남윤기',
     '임준석'
 ];
-const NEWS_EMPHASIS_PATTERNS = [
-    ...LAB_AUTHOR_EMPHASIS_PATTERNS,
+const NEWS_DETAIL_EMPHASIS_PATTERNS = [
     /top-tier\s+BK21\s+conference\s+in\s+Computer\s+Science/g,
     /BK21\s+컴퓨터과학\s+분야\s+우수\s+국제학술대회/g,
     /CS\s+우수\s+국제학술대회/g,
@@ -556,6 +555,10 @@ const NEWS_EMPHASIS_PATTERNS = [
     /ACM\s+Symposium\s+on\s+Virtual\s+Reality\s+Software\s+and\s+Technology\s+\(VRST\)\s+2025/g,
     /\(?Acceptance\s+Rate:\s*\d+(?:\.\d+)?%\)?/g,
     /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
+];
+const NEWS_EMPHASIS_PATTERNS = [
+    ...LAB_AUTHOR_EMPHASIS_PATTERNS,
+    ...NEWS_DETAIL_EMPHASIS_PATTERNS
 ];
 const PUBLICATION_EMPHASIS_PATTERNS = [
     ...LAB_AUTHOR_EMPHASIS_PATTERNS,
@@ -762,11 +765,18 @@ function emphasizeContentElement(
 }
 
 function applyNewsEmphasis() {
-    document.querySelectorAll('#news .news-row.is-highlight').forEach(row => {
+    document.querySelectorAll('#news .news-row').forEach(row => {
         const contentEl = getNewsContentElement(row);
         if (!contentEl) return;
-        const extraPatterns = getNewsTagClass(row) === 'grant' ? GRANT_EMPHASIS_PATTERNS : [];
-        emphasizeContentElement(contentEl, rememberNewsContentOriginal, extraPatterns);
+        const extraPatterns = row.classList.contains('is-highlight') ? [...NEWS_DETAIL_EMPHASIS_PATTERNS] : [];
+        if (getNewsTagClass(row) === 'grant') extraPatterns.push(...GRANT_EMPHASIS_PATTERNS);
+        emphasizeContentElement(
+            contentEl,
+            rememberNewsContentOriginal,
+            extraPatterns,
+            '',
+            LAB_AUTHOR_EMPHASIS_PATTERNS
+        );
     });
 }
 
