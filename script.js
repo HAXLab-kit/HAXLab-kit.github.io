@@ -521,7 +521,7 @@ function markImportantNews() {
     });
 }
 
-const NEWS_EMPHASIS_PATTERNS = [
+const LAB_AUTHOR_EMPHASIS_PATTERNS = [
     'Youngwon Kim',
     'Jemin Lee',
     'Jeonghyeon Kim',
@@ -545,7 +545,10 @@ const NEWS_EMPHASIS_PATTERNS = [
     '우승우',
     '김구',
     '남윤기',
-    '임준석',
+    '임준석'
+];
+const NEWS_EMPHASIS_PATTERNS = [
+    ...LAB_AUTHOR_EMPHASIS_PATTERNS,
     /top-tier\s+BK21\s+conference\s+in\s+Computer\s+Science/g,
     /BK21\s+컴퓨터과학\s+분야\s+우수\s+국제학술대회/g,
     /CS\s+우수\s+국제학술대회/g,
@@ -557,6 +560,7 @@ const NEWS_EMPHASIS_PATTERNS = [
     /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
 ];
 const PUBLICATION_EMPHASIS_PATTERNS = [
+    ...LAB_AUTHOR_EMPHASIS_PATTERNS,
     /CS(?:\s*분야)?\s+우수\s+국제\s*학술대회/g,
     /\(?Acceptance\s+Rate:\s*\d+(?:\.\d+)?%\)?/g,
     /\(?채택률\s*\d+(?:\.\d+)?%\)?/g
