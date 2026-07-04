@@ -267,7 +267,8 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 .pub-table td{padding:22px 0;vertical-align:top;font-size:.92rem;line-height:1.6}
 .pub-table td:first-child{padding-right:32px}
 .pub-year{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--ink);width:80px;font-size:1.25rem}
-.pub-table strong{font-weight:500;color:var(--ink);font-size:.95rem}
+.pub-table strong:not(.news-emphasis){font-weight:500;color:var(--ink);font-size:.95rem}
+.pub-table .news-emphasis{font-weight:700;color:inherit;font-size:inherit}
 .pub-venue{font-size:.82rem;color:var(--ink-mute);font-style:italic}
 .pub-link{display:inline-block;margin-left:10px;font-size:.72rem;font-weight:500;color:var(--accent);padding:2px 0;border-bottom:1px solid var(--accent);transition:opacity .2s}
 .pub-link:hover{opacity:.7;color:var(--accent)}

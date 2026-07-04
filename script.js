@@ -530,6 +530,7 @@ const NEWS_EMPHASIS_PATTERNS = [
     'Juyoung Lee',
     'Kikong Lee',
     'Taewan Kim',
+    'Seungwoo Woo',
     'Gu Kim',
     'Yoongi Nam',
     'Junseok Im',
@@ -541,6 +542,7 @@ const NEWS_EMPHASIS_PATTERNS = [
     '이주영',
     '이기공',
     '김태완',
+    '우승우',
     '김구',
     '남윤기',
     '임준석',
@@ -580,6 +582,7 @@ const GRANT_EMPHASIS_PATTERNS = [
 ];
 const newsContentOriginals = new WeakMap();
 const highlightContentOriginals = new WeakMap();
+const publicationContentOriginals = new WeakMap();
 
 function escapeRegExp(value) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -599,6 +602,10 @@ function getHighlightContentElements() {
     return Array.from(document.querySelectorAll('#highlightsGrid .highlight-card p'));
 }
 
+function getPublicationContentElements() {
+    return Array.from(document.querySelectorAll('#publications .pub-table td:nth-child(2)'));
+}
+
 function rememberNewsContentOriginal(contentEl) {
     if (!newsContentOriginals.has(contentEl)) {
         newsContentOriginals.set(contentEl, contentEl.innerHTML);
@@ -608,6 +615,12 @@ function rememberNewsContentOriginal(contentEl) {
 function rememberHighlightContentOriginal(contentEl) {
     if (!highlightContentOriginals.has(contentEl)) {
         highlightContentOriginals.set(contentEl, contentEl.innerHTML);
+    }
+}
+
+function rememberPublicationContentOriginal(contentEl) {
+    if (!publicationContentOriginals.has(contentEl)) {
+        publicationContentOriginals.set(contentEl, contentEl.innerHTML);
     }
 }
 
@@ -625,9 +638,17 @@ function restoreHighlightContentOriginals() {
     });
 }
 
+function restorePublicationContentOriginals() {
+    getPublicationContentElements().forEach(contentEl => {
+        const original = publicationContentOriginals.get(contentEl);
+        if (original !== undefined) contentEl.innerHTML = original;
+    });
+}
+
 function restoreEmphasisOriginals() {
     restoreNewsContentOriginals();
     restoreHighlightContentOriginals();
+    restorePublicationContentOriginals();
 }
 
 function unwrapNewsEmphasis() {
@@ -687,13 +708,14 @@ function emphasizeTextNode(node, extraPatterns = []) {
     node.replaceWith(fragment);
 }
 
-function emphasizeContentElement(contentEl, rememberOriginal, extraPatterns = []) {
+function emphasizeContentElement(contentEl, rememberOriginal, extraPatterns = [], skipSelector = '') {
     rememberOriginal(contentEl);
 
     const walker = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT, {
         acceptNode(node) {
             if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
             if (node.parentElement?.closest('.news-emphasis')) return NodeFilter.FILTER_REJECT;
+            if (skipSelector && node.parentElement?.closest(skipSelector)) return NodeFilter.FILTER_REJECT;
             return NodeFilter.FILTER_ACCEPT;
         }
     });
@@ -720,10 +742,22 @@ function applyHighlightEmphasis() {
     });
 }
 
+function applyPublicationEmphasis() {
+    getPublicationContentElements().forEach(contentEl => {
+        emphasizeContentElement(
+            contentEl,
+            rememberPublicationContentOriginal,
+            [],
+            'strong:not(.news-emphasis)'
+        );
+    });
+}
+
 function applyImportantNewsEmphasis() {
     unwrapNewsEmphasis();
     applyNewsEmphasis();
     applyHighlightEmphasis();
+    applyPublicationEmphasis();
 }
 
 function populateHighlights(limit = 5) {
