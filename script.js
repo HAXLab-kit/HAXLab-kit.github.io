@@ -500,6 +500,8 @@ function isImportantNews(row) {
 
     const tagClass = getNewsTagClass(row);
     const text = row.textContent.trim().replace(/\s+/g, ' ');
+    if (text.toLowerCase().includes('conditionally accepted')) return false;
+
     const importantKeywords = [
         'top-tier BK21 conference in Computer Science',
         'IEEE ISMAR',
