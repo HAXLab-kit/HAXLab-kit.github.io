@@ -176,17 +176,17 @@ const personData = {
                 'Springer Nature, Scientific Reports',
                 'Springer Nature, Universal Access in the Information Society',
                 'ACM Conference on Human Factors in Computing Systems (ACM CHI)',
-                'IEEE International Symposium on Mixed and Augmented Reality (IEEE ISMAR)',
+                'International Symposium on Mixed and Augmented Reality (IEEE ISMAR)',
                 'ACM Symposium on Virtual Reality Software and Technology (ACM VRST)',
-                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR)',
+                'Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR)',
                 'Smart Media Journal',
                 'Journal of the Korea Computer Graphics Society',
                 'Journal of Digital Contents Society (Lifetime member)'
             ],
             programCommittee: [
-                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2026) Program Chair',
+                'Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2026) Program Chair',
                 'IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR 2026) Finance Chair',
-                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2025) Local Organization Chair',
+                'Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2025) Local Organization Chair',
                 'IEEE International Symposium on Mixed and Augmented Reality (IEEE ISMAR 2025) Doctoral Consortium Chair'
             ],
             associateEditor: [
