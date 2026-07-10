@@ -184,25 +184,18 @@ const personData = {
                 'Journal of Digital Contents Society (Lifetime member)'
             ],
             programCommittee: [
+                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2026) Program Chair',
                 'IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR 2026) Finance Chair',
-                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2026) Local Organization Chair',
+                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR 2025) Local Organization Chair',
                 'IEEE International Symposium on Mixed and Augmented Reality (IEEE ISMAR 2025) Doctoral Consortium Chair'
             ],
             associateEditor: [
                 'Journal of Information and Communication Convergence Engineering (JICCE)',
                 'Journal of Digital Contents Society'
             ],
-            talks: [
-                'National Forensic Service (Nov 2024)',
-                'Wonkwang University (Oct 2023)',
-                'Chonnam National University (Sep 2023)',
-                'Mokpo National University (Aug 2023)',
-                'Wonkwang University (Nov 2022)',
-                'Korean Institute of Information Scientists and Engineers (Sep 2022)',
-                'Wonkwang University (Dec 2022)'
-            ]
         },
         awards: [
+            'Outstanding Teaching Professor 2026-1',
             'Outstanding Teaching Professor 2025-2',
             'Outstanding Teaching Professor 2024-2',
             'Outstanding Employee Award (KETI) 2022'
