@@ -187,6 +187,23 @@
       <div class="container">
         <h2 class="section-title">News</h2>
         <div class="news-list">
+          <div class="news-row" data-highlight="true">
+            <span class="news-date">2026.7.12</span
+            ><span class="news-tag award">Award</span
+            ><span
+              >Jeonghyeon Kim has been selected for the Presidential Science
+              Scholarship for Graduate Students.</span
+            >
+          </div>
+          <div class="news-row" data-highlight="true">
+            <span class="news-date">2026.7.12</span
+            ><span class="news-tag grant">Grant</span
+            ><span
+              >We have been selected for the ETRI project "Development of a
+              Multi-Device Operation and Field Management System for XR-Based
+              Egocentric Multimodal Emotion and Affect Data Collection."</span
+            >
+          </div>
            <div class="news-row">
             <span class="news-date">2026.7.3</span
             ><span class="news-tag conf">Conf</span
@@ -199,8 +216,8 @@
             <span class="news-date">2026.7.3</span
             ><span class="news-tag conf">Conf</span
             ><span
-              >Gave a presentation at 2026 Korea Society of Digital Content Summer Conference and Undergraduate Paper Competition presenting our paper.
-              "Design of a PC-XR Interlinked Spatial Pointing and Device Management System for XR Collaborative Environmentse" by Donghee Lee.</span
+              >Gave a presentation at 2026 Korea Society of Digital Content Summer Conference and Undergraduate Paper Competition presenting our paper,
+              "Design of a PC-XR Interlinked Spatial Pointing and Device Management System for XR Collaborative Environments" by Donghee Lee.</span
             >
           </div>
           <div class="news-row">
@@ -544,7 +561,12 @@
     </section>
 
     <!-- ============ PEOPLE ============ -->
-    <section id="people" class="section page-section" style="display: none">
+    <section
+      id="people"
+      class="section page-section"
+      style="display: none"
+      data-no-i18n
+    >
       <div class="container">
         <h2 class="section-title">People</h2>
 
@@ -710,6 +732,7 @@
       id="person-detail"
       class="section page-section"
       style="display: none"
+      data-no-i18n
     >
       <div class="container">
         <button class="back-btn" id="backToPeople">
@@ -1028,6 +1051,30 @@
         <h2 class="section-title">Projects</h2>
         <h3 class="group-title">Ongoing</h3>
         <div class="project-list">
+          <div class="project-card">
+            <div class="proj-logo">
+              <img src="images/projects/etri.jpg" alt="ETRI" />
+            </div>
+            <div class="proj-body">
+              <span class="proj-badge ongoing">Ongoing</span>
+              <h4>
+                Development of a Multi-Device Operation and Field Management
+                System for XR-Based Egocentric Multimodal Emotion and Affect
+                Data Collection
+              </h4>
+              <p>
+                Develops a field management system for coordinated operation
+                of multiple XR devices and reliable collection of egocentric
+                multimodal emotion and affect data.
+              </p>
+              <div class="proj-meta">
+                <span
+                  ><i class="fas fa-landmark"></i> Electronics and
+                  Telecommunications Research Institute (ETRI)</span
+                ><span><i class="fas fa-calendar"></i> 2026</span>
+              </div>
+            </div>
+          </div>
           <div class="project-card">
             <div class="proj-logo">
               <img src="images/projects/한국연구재단.svg" alt="NRF" />
@@ -2619,7 +2666,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
-    <script src="script.js?v=18"></script>
-    <script src="i18n.js?v=11"></script>
+    <script src="script.js?v=19"></script>
+    <script src="i18n.js?v=12"></script>
   </body>
 </html>

@@ -218,13 +218,6 @@ const personData = {
             '2020.03 - | Kumoh National Institute of Technology, Department of Computer Software Engineering'
         ],
         research: ['VR 기반 게임 인터랙션', '가상 환경에서의 물체 파지(Grasping) 기법', 'Digital Human', 'HCI'],
-        ongoingProjects: [
-            '2025.05.07 - | 화재현장 자동 재구성 및 VR 기반 실감형 수사기술 연구',
-            '2025.03.30 - | 교통사고 영상 분석 시스템 개발',
-            '2025.01.01 - | 디지털트윈 연계 ICT 기술발굴 연구',
-            '2024.07.22 - | 초거대 AI 기반 산학연 협업 생태계 구축 사업',
-            '2024.07.22 - | 초거대 AI 기반 방산품 설계 유지보수 서비스 실증 사업'
-        ],
         publications: [
             {title: 'Jeonghyeon Kim, Jemin Lee, Hyeongjun Kang, Taewan Kim, Jungsik Koo, Jiyong Park, Byungwoo Cho, Yun Young Hwa, Bumki Kim, Daeun Kim, and Youngwon Kim. "Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling and High-Fidelity Gesture Interaction with WebGL Integration"', venue: 'Demonstration at ACM VRST 2025 (Canada)'},
             {title: 'Jemin Lee*, Jeonghyeon Kim*, Hyeongjun Kang, Hoon Ryu and Youngwon Kim. "Trade-offs in Virtual Grasping: The Interplay of Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025 (CS분야 우수 국제학술대회, Canada)'},
@@ -234,7 +227,6 @@ const personData = {
             {title: 'Jemin Lee, Kikong Lee, Youngwoo Kim, and Youngwon Kim. "User\'s controller and elbow-based calibration technique for realistic avatar creation in a extended reality environment."', venue: 'Journal of Digital Contents Society, Vol25, No8, pp.2597-2605, 2024'},
             {title: 'Kikong Lee, Jemin Lee, Youngwoo Kim, and Youngwon Kim. "XR-Based Magnifying Display for Low Vision Users: Spread Interaction Approach."', venue: 'Journal of Digital Contents Society, Vol25, No9, pp.2607-2616, 2024'}
         ],
-        projects: ['초거대 AI 기반 방산품 설계 유지보수 서비스 실증 사업 (2024-2026)', 'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)'],
         awards: ['AI 캡스톤디자인 경진대회 우수상 (24.12.)', '한국디지털콘텐츠학회 대학생논문경진대회 (24.11.)'],
         skills: {
             languages: 'Korean (Native), English',
@@ -259,14 +251,6 @@ const personData = {
             '2020.03 - | Kumoh National Institute of Technology - B.S. in Computer Software Engineering'
         ],
         research: ['XR 협업 환경에서의 객체 참조 전략', '멀티모달 인터랙션 기법', '다중 사용자 VR 어셈블리 시뮬레이션'],
-        ongoingProjects: [
-            '2025.08.01 - | AI 기반 상담원 직능 역량 평가 모델 및 QA 활용을 위한 알고리즘 개발',
-            '2025.05.07 - | 화재현장 자동 재구성 및 VR 기반 실감형 수사기술 연구',
-            '2025.03.30 - | 교통사고 영상 분석 시스템 개발',
-            '2025.01.01 - | 디지털트윈 연계 ICT 기술발굴 연구',
-            '2024.07.22 - | 초거대 AI 기반 산학연 협업 생태계 구축 사업',
-            '2024.07.22 - | 초거대 AI 기반 방산품 설계 유지보수 서비스 실증 사업'
-        ],
         publications: [
             {title: 'Jeonghyeon Kim, Jemin Lee, Hyeongjun Kang, Taewan Kim, Jungsik Koo, Jiyong Park, Byungwoo Cho, Yun Young Hwa, Bumki Kim, Daeun Kim, and Youngwon Kim. "Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling and High-Fidelity Gesture Interaction with WebGL Integration"', venue: 'Demonstration at ACM VRST 2025 (Canada)'},
             {title: 'Jemin Lee*, Jeonghyeon Kim*, Hyeongjun Kang, Hoon Ryu and Youngwon Kim. "Trade-offs in Virtual Grasping: The Interplay of Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025 (CS분야 우수 국제학술대회, Canada)'},
@@ -275,7 +259,6 @@ const personData = {
             {title: 'Jemin Lee, Jeonghyeon Kim, and Youngwon Kim. "A Head-Driven Algorithm for Estimating Upper and Lower Body Motion in Virtual Reality Environments."', venue: 'IEEE Access vol. 13, pp. 76627-76637, 2025'},
             {title: 'Jeonghyeon Kim, Jung-Hoon Ahn, and Youngwon Kim. "Immersive Interaction for Inclusive Virtual Reality Navigation: Enhancing Accessibility for Socially Underprivileged Users."', venue: 'Electronics 14.5 (2025): 1046'}
         ],
-        projects: ['초거대 AI 기반 방산품 설계 유지보수 서비스 실증 사업 (2024-2026)', 'Spatial Computing XR 멀티모달 인터랙션 기술 (2024-2025)'],
         awards: ['국회의원 표창 (25.8.)', 'AI 캡스톤디자인 경진대회 우수상 (24.12.)', '한국디지털콘텐츠학회 대학생논문경진대회 (24.11.)'],
         patents: ['25.10. 시선 추적 및 테이블탑 기반 가상 터치패드를 이용한 XR 환경의 객체 선택 및 제어 방법 (Method for Object Selection and Control in XR Environments Using Gaze Tracking and a Tabletop-based Virtual Touchpad)'],
         skills: {
@@ -300,13 +283,6 @@ const personData = {
             '2023.03 - | Kumoh National Institute of Technology, Department of Computer Software Engineering'
         ],
         research: ['몰입형 XR 콘텐츠 개발', 'XR 인터랙션 기술'],
-        ongoingProjects: [
-            '2025.05.07 - | 화재현장 자동 재구성 및 VR 기반 실감형 수사기술 연구',
-            '2025.03.30 - | 교통사고 영상 분석 시스템 개발',
-            '2025.01.01 - | 디지털트윈 연계 ICT 기술발굴 연구',
-            '2024.07.22 - | 초거대 AI 기반 산학연 협업 생태계 구축 사업',
-            '2024.07.22 - | 초거대 AI 기반 방산품 설계 유지보수 서비스 실증 사업'
-        ],
         skills: {
             languages: 'Korean (Native), English',
             programming: 'Java, C#, Swift'
@@ -373,9 +349,6 @@ const personData = {
             '2022.03 - | Kumoh National Institute of Technology, Department of Computer Software Engineering'
         ],
         research: ['Hand-Tracking 인터랙션', 'HCI'],
-        ongoingProjects: [
-            '2024.07.22 - | 초거대 AI 기반 방산품 설계 유지보수 서비스 실증 사업'
-        ],
         awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)'],
         skills: {
             languages: 'Korean (Native), English',
@@ -412,11 +385,7 @@ function showPersonDetail(personId) {
 
     if (p.research) html += `<div class="pd-section"><h3><i class="fas fa-flask"></i> Research Interests</h3><ul>${p.research.map(r => `<li>${r}</li>`).join('')}</ul></div>`;
 
-    if (p.ongoingProjects && p.ongoingProjects.length) html += `<div class="pd-section"><h3><i class="fas fa-tasks"></i> Ongoing Projects</h3><ul>${p.ongoingProjects.map(op => `<li>${op}</li>`).join('')}</ul></div>`;
-
     if (p.publications && p.publications.length) html += `<div class="pd-section"><h3><i class="fas fa-file-alt"></i> Publications</h3>${p.publications.map(pub => `<div class="pd-pub-item"><strong>${pub.title}</strong><br><span class="pub-venue">${pub.venue}</span></div>`).join('')}</div>`;
-
-    if (p.projects && p.projects.length) html += `<div class="pd-section"><h3><i class="fas fa-project-diagram"></i> Projects</h3><ul>${p.projects.map(pr => `<li>${pr}</li>`).join('')}</ul></div>`;
 
     if (p.awards && p.awards.length) html += `<div class="pd-section"><h3><i class="fas fa-trophy"></i> Awards & Honors</h3><ul>${p.awards.map(a => `<li>${a}</li>`).join('')}</ul></div>`;
 
