@@ -154,7 +154,7 @@
             'Ongoing': '진행 중',
             'Completed': '완료',
             'Development of a Multi-Device Operation and Field Management System for XR-Based Egocentric Multimodal Emotion and Affect Data Collection': 'XR 기반 자기중심 멀티모달 감정·감성 데이터 수집을 위한 멀티디바이스 운용 및 현장 관리 시스템 개발',
-            'Develops a field management system for coordinated operation of multiple XR devices and reliable collection of egocentric multimodal emotion and affect data.': '여러 XR 디바이스를 통합 운용하고 자기중심 멀티모달 감정·감성 데이터를 현장에서 안정적으로 수집·관리하는 시스템을 개발합니다.',
+            'Designs a multi-device operating environment that integrates smart glasses, smartwatches, audio devices, and biosignal sensors to collect video, audio, and physiological data. The project defines timestamp-based synchronization, session-level data and metadata management, and standardized measurement, quality-control, and error-response protocols.': '통제된 스튜디오·실험실 환경에서 스마트글래스, 스마트워치, 음성 입력 장치, 생체신호 측정 장비를 연계해 영상·음성·생체신호를 수집하는 멀티디바이스 운영 환경을 설계합니다. 타임스탬프 기반 동기화, 세션 단위 데이터·메타데이터 관리, 표준 측정 절차와 품질 점검·오류 대응 프로토콜을 구축합니다.',
             'Electronics and Telecommunications Research Institute (ETRI)': '한국전자통신연구원(ETRI)',
             'Securing Highly Precise Digital-Twin Technology to Pave the Way for Dexterous Manipulation of Multi-Agents in Manufacturing Environments': '다개체 제조환경에서의 조작 숙련성 개선을 위한 고정밀 디지털트윈 기술 개발',
             'Builds a high-precision manufacturing digital twin combining 3DGS-based workspace reconstruction, USD scene graphs, multi-robot physics simulation, and XR-based human-robot interaction for deformable-object manipulation.': '3DGS 기반 작업 공간 재현, USD Scene Graph, 다개체 로봇 물리 시뮬레이션, XR 기반 인간-로봇 상호작용을 결합해 비정형 물체 조작을 지원하는 고정밀 제조 디지털 트윈을 구축합니다.',
