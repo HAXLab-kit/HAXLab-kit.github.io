@@ -240,19 +240,19 @@ const personData = {
         dept: 'Department of Computer Software Engineering',
         affil: 'Kumoh National Institute of Technology',
         email: 'dnrgusrla1@kumoh.ac.kr',
-        tags: ['AI Spatial Intelligence', 'Digital Twin', 'XR Interaction'],
+        tags: ['AI Spatial Intelligence & Digital Twin', '3DGS', 'XR Interaction'],
         links: {
             github: 'https://github.com/JeongHyeon2',
             scholar: 'https://scholar.google.co.kr/citations?user=k_uM_U0AAAAJ&hl=ko'
         },
-        bio: 'I am Jeonghyeon (김정현), a student in the Department of Computer Software Engineering at Kumoh National Institute of Technology. My current research interests are AI spatial intelligence, digital twins, and XR interaction.',
+        bio: 'I am Jeonghyeon (김정현), a student in the Department of Computer Software Engineering at Kumoh National Institute of Technology. My current research interests are AI spatial intelligence and digital twins, 3DGS, and XR interaction.',
         education: [
             '2025.09 - Present | Kumoh National Institute of Technology - M.S. in Software Engineering (Integrated B.S./M.S. Program)',
             '2020.03 - | Kumoh National Institute of Technology - B.S. in Computer Software Engineering'
         ],
-        research: ['AI 공간지능, 디지털트윈 및 XR 상호작용'],
+        research: ['AI 공간지능 디지털트윈, 3DGS, XR상호작용'],
         publications: [
-            {title: 'Jeonghyeon Kim, Jemin Lee, Hyeongjun Kang, Donghee Lee, Hoon Ryu, and Youngwon Kim. "Model Refinement Pipeline via Re-observation of 3D Gaussian Splatting-based Digital Twins Using XR Smart Glasses"', venue: 'Journal of Digital Contents Society, 27(6), 1477-1486, 2026 (KCI)'},
+            {title: '김정현, 이제민, 강형준, 이동희, 류훈, 김영원. "XR 스마트글래스를 이용한 3D Gaussian Splatting 기반 디지털 트윈의 재관측을 통한 모델 정밀화 파이프라인"', venue: '디지털콘텐츠학회논문지, 27(6), 1477-1486, 2026 (KCI)'},
             {title: 'Jeonghyeon Kim, Jemin Lee, Hyeongjun Kang, Taewan Kim, Jungsik Koo, Jiyong Park, Byungwoo Cho, Yun Young Hwa, Bumki Kim, Daeun Kim, and Youngwon Kim. "Multi-User VR Assembly and Manufacture Design: Multimodal Object Modeling and High-Fidelity Gesture Interaction with WebGL Integration"', venue: 'Demonstration at ACM VRST 2025 (Canada)'},
             {title: 'Jemin Lee*, Jeonghyeon Kim*, Hyeongjun Kang, Hoon Ryu and Youngwon Kim. "Trade-offs in Virtual Grasping: The Interplay of Interaction Fidelity and Object Affordance"', venue: 'ACM VRST 2025 (CS분야 우수 국제학술대회, Canada)'},
             {title: 'Jeonghyeon Kim, Jemin Lee and Youngwon Kim. "What Makes Object Referencing Clear? Multimodal Strategies for Shared Understanding in XR Collaboration"', venue: 'IEEE ISMAR 2025 (CS분야 우수 국제학술대회, South Korea)'},
