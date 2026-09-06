@@ -236,7 +236,7 @@ const personData = {
     kim_jeonghyeon: {
         name: 'Jeonghyeon Kim', nameKr: '김정현',
         photo: 'images/people/kim_jeonghyeon.jpg',
-        role: 'M.S. Student',
+        role: 'Integrated M.S./Ph.D. Student',
         dept: 'Department of Computer Software Engineering',
         affil: 'Kumoh National Institute of Technology',
         email: 'dnrgusrla1@kumoh.ac.kr',
@@ -247,8 +247,9 @@ const personData = {
         },
         bio: 'I am Jeonghyeon (김정현), a student in the Department of Computer Software Engineering at Kumoh National Institute of Technology. My current research interests are AI spatial intelligence and digital twins, 3DGS, and XR interaction.',
         education: [
-            '2025.09 - Present | Kumoh National Institute of Technology - M.S. in Software Engineering (Integrated B.S./M.S. Program)',
-            '2020.03 - | Kumoh National Institute of Technology - B.S. in Computer Software Engineering'
+            '2026.09 - Present | Kumoh National Institute of Technology - Integrated M.S./Ph.D. Program in Software Engineering',
+            '2025.09 - 2026.08 | Kumoh National Institute of Technology - M.S. Program in Software Engineering (Integrated B.S./M.S. Program)',
+            '2020.03 - 2025.08 | Kumoh National Institute of Technology - B.S. in Computer Software Engineering'
         ],
         research: ['AI 공간지능 디지털트윈, 3DGS, XR상호작용'],
         publications: [
