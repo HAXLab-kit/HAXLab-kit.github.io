@@ -287,6 +287,7 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
 /* ===== Awards ===== */
 .awards-with-photos{display:flex;flex-direction:column;gap:28px;max-width:1020px;margin:0 auto}
 .award-entry{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:28px;background:#ffffff;border:1px solid var(--line);border-radius:10px;transition:box-shadow .2s,border-color .2s}
+.award-entry.no-photo{grid-template-columns:1fr}
 .award-entry:hover{box-shadow:0 6px 24px rgba(26,35,50,.06);border-color:var(--accent)}
 .award-info{padding:0}
 .award-info h4{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:8px;line-height:1.4;letter-spacing:-0.01em;color:var(--ink)}
