@@ -288,7 +288,7 @@
             '24.07. Photo of our lab': '24.07. 연구실 단체 사진',
 
             'Address': '주소',
-            'B111, Digital Building': '디지털관 B111호',
+            'D333, Digital Building': '디지털관 D333호',
             '61 Daehak-ro, Gumi-si, Gyeongsangbuk-do': '경상북도 구미시 대학로 61',
             'Email': '이메일',
             'Web': '웹',
