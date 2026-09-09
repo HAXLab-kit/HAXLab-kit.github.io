@@ -45,7 +45,7 @@
             'Lab': '연구실',
             'Press coverage': '언론 보도',
             'Jeonghyeon Kim transitioned to the integrated M.S./Ph.D. program.': '김정현 학생이 2026년 9월 1일 자로 석·박사통합과정으로 전환했습니다.',
-            'We have been selected for the "XR-Based Battlefield Situation Map Experimental Study" project with Woojin GNS.': '우진지앤에스와 함께 "XR 기반 전장상황도 실험연구" 과제에 선정되었습니다.',
+            'We signed a contract with Woojin GNS for the "XR-Based Battlefield Situation Map Experimental Study" project.': '우진지앤에스와 "XR 기반 전장상황도 실험연구" 과제 계약을 체결했습니다.',
             'Hyeongjun Kang and Donghee Lee graduated with B.S. degrees and transitioned to the integrated B.S./M.S. program as M.S. students.': '강형준, 이동희 학생이 학사 학위를 취득하고 학·석사연계과정 석사과정으로 전환했습니다.',
             'Hyeongjun Kang and Donghee Lee received National Assembly Member Commendations at the August 2026 commencement ceremony.': '강형준, 이동희 학생이 2026년 8월 학위수여식에서 국회의원 포상을 수상했습니다.',
             'Hyeongjun Kang received a Graduation Award at the August 2026 commencement ceremony.': '강형준 학생이 2026년 8월 학위수여식에서 졸업포상을 수상했습니다.',
