@@ -236,7 +236,7 @@
             'Domestic Journals (KCI)': '국내학술지(KCI)',
             'Domestic Conferences': '국내학술대회',
             'IEEE ISMAR 2026 (CS 우수 국제학술대회, Conditionally Accepted)': 'IEEE ISMAR 2026(CS 우수 국제학술대회, 조건부 채택)',
-            'IEEE VR 2027 (Under Review)': 'IEEE VR 2027 (심사 중)',
+            'Top-Tier CS International Conference (Under Review)': 'CS 우수 국제학술대회 (심사 중)',
 
             'Undergraduate': '학부',
             'Graduate': '대학원',
@@ -258,7 +258,8 @@
             'Commendation Award': '표창장',
             'Jeonghyeon Kim · Awarded by a Member of the National Assembly of Korea, Kumoh National Institute of Technology': '김정현 · 대한민국 국회의원 표창, 국립금오공과대학교',
             'National Assembly Member Commendation': '국회의원 포상',
-            'Hyeongjun Kang, Donghee Lee · Presented by National Assembly Member Koo Ja-geun': '강형준, 이동희 · 구자근 국회의원 표창',
+            'Hyeongjun Kang · Presented by National Assembly Member Koo Ja-geun': '강형준 · 구자근 국회의원 표창',
+            'Donghee Lee · Presented by National Assembly Member Koo Ja-geun': '이동희 · 구자근 국회의원 표창',
             'Graduation Award': '졸업포상',
             'Hyeongjun Kang · Kumoh National Institute of Technology': '강형준 · 국립금오공과대학교',
             'Bronze Prize - 2026 Korea Digital Contents Society Summer Conference Undergraduate Paper Competition': '동상 - 2026 한국디지털콘텐츠학회 하계종합학술대회 대학생 논문경진대회',
