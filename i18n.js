@@ -44,6 +44,8 @@
             'Paper': '논문',
             'Lab': '연구실',
             'Press coverage': '언론 보도',
+            'Two papers have been accepted for publication in the Journal of Digital Contents Society (DCS).': '우리 논문 2편이 디지털콘텐츠학회논문지(DCS)에 게재 승인되었습니다.',
+            'Three papers have been accepted for publication in the Journal of Korea Multimedia Society.': '우리 논문 3편이 한국멀티미디어학회논문지에 게재 승인되었습니다.',
             'We received the Grand Prize at the 2026 Daegu-Gyeongbuk Startup Festival DGU-IR Contest.': '2026 대구·경북 스타트업 페스티벌 DGU-IR Contest에서 최우수상을 수상했습니다.',
             'Jeonghyeon Kim transitioned to the integrated M.S./Ph.D. program.': '김정현 학생이 2026년 9월 1일 자로 석·박사통합과정으로 전환했습니다.',
             'We have been selected for the "XR-Based Battlefield Situation Map Experimental Study" project with Woojin GNS.': '우진지앤에스와 함께 "XR 기반 전장상황도 실험연구" 과제에 선정되었습니다.',
