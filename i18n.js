@@ -44,6 +44,7 @@
             'Paper': '논문',
             'Lab': '연구실',
             'Press coverage': '언론 보도',
+            'Gave a presentation at IEEE ISMAR 2026 (CS 우수 국제학술대회), presenting our paper "Phonaze: Gaze-Hover with Torso-Supported Phone Confirmation for Ergonomic Interaction in Supine Mixed Reality" by Hyeongjun Kang.': 'IEEE ISMAR 2026(CS 우수 국제학술대회)에서 강형준 학생의 논문 "Phonaze: Gaze-Hover with Torso-Supported Phone Confirmation for Ergonomic Interaction in Supine Mixed Reality"를 발표했습니다.',
             'Two papers have been accepted for publication in the Journal of Digital Contents Society (DCS).': '우리 논문 2편이 디지털콘텐츠학회논문지(DCS)에 게재 승인되었습니다.',
             'Three papers have been accepted for publication in the Journal of Korea Multimedia Society.': '우리 논문 3편이 한국멀티미디어학회논문지에 게재 승인되었습니다.',
             'We received the Grand Prize at the 2026 Daegu-Gyeongbuk Startup Festival DGU-IR Contest.': '2026 대구·경북 스타트업 페스티벌 DGU-IR Contest에서 최우수상을 수상했습니다.',
@@ -279,6 +280,8 @@
             'Bronze Prize (3rd) - 2024 Fall Korea Digital Contents Society Conference': '동상(3등) - 2024 한국디지털콘텐츠학회 추계학술대회',
             'Jeonghyeon Kim, Jemin Lee, Youngwon Kim · Kumoh National Institute of Technology': '김정현, 이제민, 김영원 · 국립금오공과대학교',
 
+            '26.10 IEEE ISMAR 2026': '26.10 ISMAR 2026 학회 참석',
+            '26.10 Paper Presentation at ISMAR 2026': '26.10 ISMAR 2026 논문 발표',
             '26.09. Interim Review Demonstration (NIA)': '26.09. 중간보고회 시연 (NIA)',
             '26.09. Assembly Scenario': '26.09. 조립 시나리오',
             '26.09. DGU-IR Contest Grand Prize': '26.09. DGU-IR Contest 최우수상',
