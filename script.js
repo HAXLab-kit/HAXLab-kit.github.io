@@ -172,13 +172,14 @@ const personData = {
             reviewer: [
                 'IEEE Transactions on Visualization and Computer Graphics (IEEE TVCG)',
                 'IEEE Transactions on Consumer Electronics (IEEE TCE)',
+                'IEEE Virtual Reality (IEEE VR)',
+                'IEEE International Symposium on Mixed and Augmented Reality (IEEE ISMAR)',
+                'IEEE Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR)',
                 'Springer Nature, Virtual Reality',
                 'Springer Nature, Scientific Reports',
                 'Springer Nature, Universal Access in the Information Society',
                 'ACM Conference on Human Factors in Computing Systems (ACM CHI)',
-                'International Symposium on Mixed and Augmented Reality (IEEE ISMAR)',
                 'ACM Symposium on Virtual Reality Software and Technology (ACM VRST)',
-                'Asia-Pacific Workshop on Mixed and Augmented Reality (IEEE APMAR)',
                 'Smart Media Journal',
                 'Journal of the Korea Computer Graphics Society',
                 'Journal of Digital Contents Society (Lifetime member)'
@@ -335,25 +336,6 @@ const personData = {
         skills: {
             languages: 'Korean (Native), English',
             programming: 'Java'
-        }
-    },
-    lee_kikong: {
-        name: 'Kikong Lee', nameKr: '이기공',
-        photo: 'images/people/lee_kikong.jpg',
-        role: 'Undergraduate Student (Academic Break)',
-        dept: 'Department of Computer Software Engineering',
-        affil: 'Kumoh National Institute of Technology',
-        email: 'dlrlrhd@gmail.com',
-        tags: ['Hand-Tracking','HCI'],
-        bio: 'I am Kikong (이기공), Department of Computer Software Engineering student at Kumoh National Institute of Technology. My current research interests are Interaction in Hand-Tracking and HCI.',
-        education: [
-            '2022.03 - | Kumoh National Institute of Technology, Department of Computer Software Engineering'
-        ],
-        research: ['Hand-Tracking 인터랙션', 'HCI'],
-        awards: ['AI 캡스톤디자인 경진대회 우수상 2등 (2024.12)'],
-        skills: {
-            languages: 'Korean (Native), English',
-            programming: 'Java, C#, C++'
         }
     },
 };
