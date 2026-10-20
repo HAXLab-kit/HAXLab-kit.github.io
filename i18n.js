@@ -282,6 +282,7 @@
 
             '26.10 IEEE ISMAR 2026': '26.10 ISMAR 2026 학회 참석',
             '26.10 Paper Presentation at ISMAR 2026': '26.10 ISMAR 2026 논문 발표',
+            "26.09 Celebrating Our Professor's Birthday": '26.09 교수님 생신 축하',
             '26.09. Interim Review Demonstration (NIA)': '26.09. 중간보고회 시연 (NIA)',
             '26.09. Assembly Scenario': '26.09. 조립 시나리오',
             '26.09. DGU-IR Contest Grand Prize': '26.09. DGU-IR Contest 최우수상',
@@ -290,6 +291,7 @@
             '26.07. Academic Paper Competition of the Digital Contents Society': '26.07 한국디지털콘텐츠학회 논문 경진대회',
             '26.07. Jeju MT': '26.07 제주 MT',
             '26.06. Gyeongbuk Teacher Training': '26.06. 경북 교사 연수',
+            "26.05. Teacher's Day Gift": '26.05. 스승의 날 기념 선물',
             '26.04. Lunch': '26.04. 점심 식사',
             '26.03. Building Computers': '26.03. 컴퓨터 조립',
             '25.12. Lab dinner': '25.12. 연구실 회식',
