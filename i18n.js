@@ -44,6 +44,7 @@
             'Paper': '논문',
             'Lab': '연구실',
             'Press coverage': '언론 보도',
+            'We have been selected for the "Development of VPS-Integrated Client SLAM and Multi-User Spatial Alignment Technologies for Lightweight Smart Glasses" project with Deepfine.': '딥파인과 함께 "VPS 연계 경량 스마트글래스 기반 Client SLAM 및 다중 사용자 공간 정합 기술 개발" 과제에 선정되었습니다.',
             'Gave a presentation at IEEE ISMAR 2026 (CS 우수 국제학술대회), presenting our paper "Phonaze: Gaze-Hover with Torso-Supported Phone Confirmation for Ergonomic Interaction in Supine Mixed Reality" by Hyeongjun Kang.': 'IEEE ISMAR 2026(CS 우수 국제학술대회)에서 강형준 학생의 논문 "Phonaze: Gaze-Hover with Torso-Supported Phone Confirmation for Ergonomic Interaction in Supine Mixed Reality"를 발표했습니다.',
             'Two papers have been accepted for publication in the Journal of Digital Contents Society (DCS).': '우리 논문 2편이 디지털콘텐츠학회논문지(DCS)에 게재 승인되었습니다.',
             'Three papers have been accepted for publication in the Journal of Korea Multimedia Society.': '우리 논문 3편이 한국멀티미디어학회논문지에 게재 승인되었습니다.',
@@ -166,6 +167,9 @@
 
             'Ongoing': '진행 중',
             'Completed': '완료',
+            'Development of VPS-Integrated Client SLAM and Multi-User Spatial Alignment Technologies for Lightweight Smart Glasses': 'VPS 연계 경량 스마트글래스 기반 Client SLAM 및 다중 사용자 공간 정합 기술 개발',
+            'Develops Client SLAM and multi-user spatial alignment technologies for lightweight smart glasses integrated with VPS, enabling users to share a common spatial coordinate system.': 'VPS와 연계된 경량 스마트글래스에서 Client SLAM 및 다중 사용자 공간 정합 기술을 개발하여 여러 사용자가 공통 공간 좌표계를 공유할 수 있도록 합니다.',
+            'Deepfine': '딥파인',
             'XR-Based Battlefield Situation Map Experimental Study': 'XR 기반 전장상황도 실험연구',
             'Conducts experimental research on XR visualization and interaction methods for intuitive battlefield situational awareness.': '직관적인 전장 상황 인식을 위한 XR 시각화 및 상호작용 방법을 실험적으로 연구합니다.',
             'Woojin GNS': '우진지앤에스',
