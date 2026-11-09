@@ -288,6 +288,8 @@
             '26.10 Paper Presentation at ISMAR 2026': '26.10 ISMAR 2026 논문 발표',
             '26.11. IAMSEC 2026 in Daejeon': '26.11. 대전 IAMSEC 2026 참가',
             '26.11. IAMSEC 2026 in Daejeon photo carousel': '26.11. 대전 IAMSEC 2026 사진 모음',
+            '26.11. SCEWC 2026 in Barcelona': '26.11. 바르셀로나 SCEWC 2026 참가',
+            '26.11. SCEWC 2026 in Barcelona photo carousel': '26.11. 바르셀로나 SCEWC 2026 사진 모음',
             'Previous photo': '이전 사진',
             'Next photo': '다음 사진',
             'Choose photo': '사진 선택',
