@@ -146,6 +146,64 @@ function initLightbox() {
     });
 }
 
+function initGalleryCarousels() {
+    document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+        const slides = Array.from(carousel.querySelectorAll('.gallery-carousel-slide'));
+        const dotsContainer = carousel.querySelector('.gallery-carousel-dots');
+        const count = carousel.querySelector('.gallery-carousel-count');
+        let current = 0;
+        let touchStartX = null;
+
+        const dots = slides.map((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'gallery-carousel-dot';
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Show photo ${index + 1} of ${slides.length}`);
+            dot.addEventListener('click', event => {
+                event.stopPropagation();
+                showSlide(index);
+            });
+            dotsContainer.appendChild(dot);
+            return dot;
+        });
+
+        function showSlide(index) {
+            current = (index + slides.length) % slides.length;
+            slides.forEach((slide, slideIndex) => {
+                const active = slideIndex === current;
+                slide.classList.toggle('is-active', active);
+                slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+            });
+            dots.forEach((dot, dotIndex) => {
+                const active = dotIndex === current;
+                dot.classList.toggle('is-active', active);
+                dot.setAttribute('aria-current', active ? 'true' : 'false');
+            });
+            count.textContent = `${current + 1} / ${slides.length}`;
+        }
+
+        carousel.querySelector('.gallery-carousel-prev').addEventListener('click', event => {
+            event.stopPropagation();
+            showSlide(current - 1);
+        });
+        carousel.querySelector('.gallery-carousel-next').addEventListener('click', event => {
+            event.stopPropagation();
+            showSlide(current + 1);
+        });
+        carousel.addEventListener('touchstart', event => {
+            touchStartX = event.changedTouches[0].clientX;
+        }, { passive: true });
+        carousel.addEventListener('touchend', event => {
+            if (touchStartX === null) return;
+            const distance = event.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(distance) > 40) showSlide(current + (distance < 0 ? 1 : -1));
+            touchStartX = null;
+        }, { passive: true });
+
+        showSlide(0);
+    });
+}
+
 // ===== Person Detail Profiles =====
 const personData = {
     prof_kim: {
@@ -924,6 +982,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transitionDelay = isProfileCard ? '0s' : `${Math.min(i * 0.03, 0.5)}s`;
     });
     initObserver();
+    initGalleryCarousels();
     initLightbox();
     initPersonCards();
     initRoute();
